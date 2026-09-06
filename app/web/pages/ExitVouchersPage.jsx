@@ -157,7 +157,7 @@ export default function ExitVouchersPage() {
 
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Nouveau Bon de Sortie
@@ -178,7 +178,7 @@ export default function ExitVouchersPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">N° Bon de Sortie</th>
                 <th className="p-3.5">Date & Heure</th>
                 <th className="p-3.5">Point de Vente Destinataire</th>
@@ -205,7 +205,7 @@ export default function ExitVouchersPage() {
                 vouchers.map((v) => {
                   const totalUnits = v.items?.reduce((sum, it) => sum + it.quantity, 0) || 0;
                   return (
-                    <tr key={v.id} className="hover:bg-stone-50 transition-colors">
+                    <tr key={v.id} className="hover:bg-sky-50 transition-colors">
                       <td className="p-3.5 font-mono font-bold text-stone-700 text-sm whitespace-nowrap">
                         {v.voucherNumber}
                       </td>
@@ -254,7 +254,7 @@ export default function ExitVouchersPage() {
           <div className={`relative w-full max-w-4xl bg-white border border-stone-200 rounded-xl shadow-2xl overflow-hidden my-4 flex flex-col transition-all duration-200 ${
             searchOpened ? 'min-h-[720px]' : 'min-h-[580px]'
           }`}>
-            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50 shrink-0">
+            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50 shrink-0">
               <div>
                 <h3 className="font-bold text-base text-stone-900 flex items-center gap-2">
                   <ArrowUpFromLine className="w-5 h-5 text-stone-600" />
@@ -286,7 +286,7 @@ export default function ExitVouchersPage() {
                   <select
                     value={selectedShopId}
                     onChange={(e) => setSelectedShopId(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                     required
                   >
                     {shops.map(s => (
@@ -303,7 +303,7 @@ export default function ExitVouchersPage() {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -316,7 +316,7 @@ export default function ExitVouchersPage() {
                     type="time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -331,7 +331,7 @@ export default function ExitVouchersPage() {
                   placeholder="Ex: Livraison express coursier moto, colis scellés..."
                   value={observation}
                   onChange={(e) => setObservation(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none placeholder:text-stone-400"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none placeholder:text-stone-400"
                 />
               </div>
 
@@ -362,7 +362,7 @@ export default function ExitVouchersPage() {
                       <div 
                         key={idx} 
                         className={`p-2.5 rounded-lg border transition-colors flex items-center gap-2.5 ${
-                          isExceeding ? 'border-stone-300 bg-stone-100' : 'border-stone-200 bg-stone-50'
+                          isExceeding ? 'border-stone-300 bg-stone-100' : 'border-stone-200 bg-sky-50'
                         }`}
                       >
                         <div className="flex-1">
@@ -390,7 +390,7 @@ export default function ExitVouchersPage() {
                               value={line.quantity}
                               onChange={(e) => handleLineChange(idx, 'quantity', e.target.value)}
                               className={`w-full px-2 py-1.5 bg-white border rounded-lg text-sm font-mono text-center outline-none ${
-                                isExceeding ? 'border-stone-500 text-stone-700 bg-stone-100/50' : 'border-stone-300 text-stone-900 focus:border-stone-600'
+                                isExceeding ? 'border-stone-500 text-stone-700 bg-stone-100/50' : 'border-stone-300 text-stone-900 focus:border-sky-500'
                               }`}
                               title="Quantité à sortir"
                               required
@@ -439,7 +439,7 @@ export default function ExitVouchersPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="flex items-center gap-1.5 px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                   {submitting ? 'Validation en cours...' : 'Valider & Décrémenter le Stock'}

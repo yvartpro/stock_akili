@@ -83,7 +83,7 @@ export default function DamagedProductsPage() {
             setSelectedProduct(null);
             setModalOpen(true);
           }}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Déclarer une Casse / Perte
@@ -129,7 +129,7 @@ export default function DamagedProductsPage() {
             placeholder="Rechercher par référence, produit, motif..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-stone-500 outline-none"
+            className="w-full pl-8 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-sky-500 outline-none"
           />
         </div>
 
@@ -137,7 +137,7 @@ export default function DamagedProductsPage() {
           <button
             onClick={() => setStatusFilter('all')}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-              statusFilter === 'all' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
+              statusFilter === 'all' ? 'bg-sky-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Tous ({damagedRecords.length})
@@ -145,7 +145,7 @@ export default function DamagedProductsPage() {
           <button
             onClick={() => setStatusFilter('endommage')}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-              statusFilter === 'endommage' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
+              statusFilter === 'endommage' ? 'bg-sky-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Endommagé
@@ -153,7 +153,7 @@ export default function DamagedProductsPage() {
           <button
             onClick={() => setStatusFilter('perdu')}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-              statusFilter === 'perdu' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
+              statusFilter === 'perdu' ? 'bg-sky-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Perdu
@@ -161,7 +161,7 @@ export default function DamagedProductsPage() {
           <button
             onClick={() => setStatusFilter('hors_service')}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-              statusFilter === 'hors_service' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
+              statusFilter === 'hors_service' ? 'bg-sky-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Hors Service
@@ -174,7 +174,7 @@ export default function DamagedProductsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">Date Déclaration</th>
                 <th className="p-3.5">SKU & Produit</th>
                 <th className="p-3.5">Statut Spécifique</th>
@@ -198,7 +198,7 @@ export default function DamagedProductsPage() {
                 </tr>
               ) : (
                 filtered.map((item) => (
-                  <tr key={item.id} className="hover:bg-stone-50 transition-colors">
+                  <tr key={item.id} className="hover:bg-sky-50 transition-colors">
                     <td className="p-3.5 text-stone-500 whitespace-nowrap text-sm">
                       {new Date(item.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     </td>

@@ -158,7 +158,7 @@ export default function ReceptionsPage() {
 
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Enregistrer une Réception
@@ -170,7 +170,7 @@ export default function ReceptionsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">N° Réception</th>
                 <th className="p-3.5">Date & Heure</th>
                 <th className="p-3.5">Fournisseur Partenaire</th>
@@ -198,7 +198,7 @@ export default function ReceptionsPage() {
                 receptions.map((rec) => {
                   const totalUnits = rec.items?.reduce((sum, it) => sum + it.quantityReceived, 0) || 0;
                   return (
-                    <tr key={rec.id} className="hover:bg-stone-50 transition-colors">
+                    <tr key={rec.id} className="hover:bg-sky-50 transition-colors">
                       <td className="p-3.5 font-mono font-bold text-stone-700 text-sm whitespace-nowrap">
                         {rec.receptionNumber}
                       </td>
@@ -250,7 +250,7 @@ export default function ReceptionsPage() {
           <div className={`relative w-full max-w-4xl bg-white border border-stone-200 rounded-xl shadow-2xl overflow-hidden my-4 flex flex-col transition-all duration-200 ${
             searchOpened ? 'min-h-[720px]' : 'min-h-[580px]'
           }`}>
-            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50 shrink-0">
+            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50 shrink-0">
               <div>
                 <h3 className="font-bold text-base text-stone-900 flex items-center gap-2">
                   <ArrowDownToLine className="w-5 h-5 text-stone-600" />
@@ -283,7 +283,7 @@ export default function ReceptionsPage() {
                   <select
                     value={selectedSupplierId}
                     onChange={(e) => setSelectedSupplierId(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                     required
                   >
                     {suppliers.map(s => (
@@ -300,7 +300,7 @@ export default function ReceptionsPage() {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -314,7 +314,7 @@ export default function ReceptionsPage() {
                     min="1"
                     value={totalCartons}
                     onChange={(e) => setTotalCartons(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -329,7 +329,7 @@ export default function ReceptionsPage() {
                   placeholder="Ex: Palette arrivée intacte, scellés conformes..."
                   value={observation}
                   onChange={(e) => setObservation(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none placeholder:text-stone-400"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none placeholder:text-stone-400"
                 />
               </div>
 
@@ -353,7 +353,7 @@ export default function ReceptionsPage() {
                   searchOpened ? 'min-h-[300px] pb-44' : 'min-h-[140px] max-h-72'
                 }`}>
                   {lines.map((line, idx) => (
-                    <div key={idx} className="p-2.5 bg-stone-50 rounded-lg border border-stone-200 flex items-center gap-2.5">
+                    <div key={idx} className="p-2.5 bg-sky-50 rounded-lg border border-stone-200 flex items-center gap-2.5">
                       <div className="flex-1">
                         <ProductSearchSelect
                           products={products}
@@ -373,7 +373,7 @@ export default function ReceptionsPage() {
                           placeholder="Qté"
                           value={line.quantityReceived}
                           onChange={(e) => handleLineChange(idx, 'quantityReceived', e.target.value)}
-                          className="w-full px-2 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono text-center outline-none focus:border-stone-600"
+                          className="w-full px-2 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono text-center outline-none focus:border-sky-500"
                           title="Quantité reçue"
                           required
                         />
@@ -386,7 +386,7 @@ export default function ReceptionsPage() {
                           placeholder="Cartons"
                           value={line.cartonsCount}
                           onChange={(e) => handleLineChange(idx, 'cartonsCount', e.target.value)}
-                          className="w-full px-2 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono text-center outline-none focus:border-stone-600"
+                          className="w-full px-2 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono text-center outline-none focus:border-sky-500"
                           title="Nombre de cartons associés"
                         />
                       </div>
@@ -424,7 +424,7 @@ export default function ReceptionsPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="flex items-center gap-1.5 px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                   {submitting ? 'Validation en cours...' : 'Valider & Incrémenter le Stock'}

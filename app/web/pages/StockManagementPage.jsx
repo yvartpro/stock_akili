@@ -127,7 +127,7 @@ export default function StockManagementPage() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setNewModalOpen(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             Ajouter Référence
@@ -146,7 +146,7 @@ export default function StockManagementPage() {
               placeholder="Rechercher par SKU, modèle, couleur, type..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-stone-600 outline-none"
+              className="w-full pl-9 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-sky-500 outline-none"
             />
           </div>
 
@@ -184,7 +184,7 @@ export default function StockManagementPage() {
           <select
             value={brandFilter}
             onChange={(e) => setBrandFilter(e.target.value)}
-            className="px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+            className="px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
           >
             <option value="">Toutes Marques</option>
             {brands.map(b => (
@@ -198,7 +198,7 @@ export default function StockManagementPage() {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
               lowStockOnly
                 ? 'bg-stone-100 text-stone-700 border-stone-200 shadow-sm'
-                : 'bg-white text-stone-600 border-stone-300 hover:bg-stone-50'
+                : 'bg-white text-stone-600 border-stone-300 hover:bg-sky-50'
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5 text-stone-500" />
@@ -212,7 +212,7 @@ export default function StockManagementPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">SKU / Code Unique</th>
                 <th className="p-3.5">Désignation & Catégorie</th>
                 <th className="p-3.5">Marque & Modèle</th>
@@ -246,7 +246,7 @@ export default function StockManagementPage() {
                   return (
                     <tr 
                       key={product.id} 
-                      className={`hover:bg-stone-50 transition-colors ${
+                      className={`hover:bg-sky-50 transition-colors ${
                         product.status !== 'disponible' ? 'opacity-70 bg-stone-100/50' : ''
                       }`}
                     >
@@ -453,7 +453,7 @@ export default function StockManagementPage() {
                 </button>
                 <button
                   type="submit"
-                  className="px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm"
+                  className="px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm"
                 >
                   Mettre à Jour
                 </button>

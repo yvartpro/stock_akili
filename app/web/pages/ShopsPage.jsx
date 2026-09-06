@@ -75,7 +75,7 @@ export default function ShopsPage() {
 
         <button
           onClick={() => setModalOpen(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Nouveau Shop
@@ -168,7 +168,7 @@ export default function ShopsPage() {
                     placeholder="SHOP-005"
                     value={code}
                     onChange={(e) => setCode(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -179,7 +179,7 @@ export default function ShopsPage() {
                     placeholder="APS Yoff"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -192,7 +192,7 @@ export default function ShopsPage() {
                   placeholder="Boulevard du 30 Juin, Gombe, Kinshasa"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   required
                 />
               </div>
@@ -205,7 +205,7 @@ export default function ShopsPage() {
                     placeholder="M. Dieudonné Kabamba"
                     value={managerName}
                     onChange={(e) => setManagerName(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function ShopsPage() {
                     placeholder="+243 81 555 0101"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   />
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function ShopsPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                   <span>{submitting ? 'Création en cours...' : 'Créer le Shop'}</span>

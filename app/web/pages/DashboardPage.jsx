@@ -42,7 +42,7 @@ export default function DashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-stone-400 border-t-transparent rounded-full animate-spin" />
+          <div className="w-10 h-10 border-2 border-sky-400 border-t-transparent rounded-full animate-spin" />
           <p className="text-sm text-stone-500">Chargement...</p>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function DashboardPage() {
             <div key={kpi.label} className="card p-5">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm font-medium text-stone-500">{kpi.label}</span>
-                <div className="w-9 h-9 rounded-lg bg-stone-100 text-stone-600 flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center">
                   <Icon className="w-4 h-4" />
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function DashboardPage() {
           </div>
 
           {lowStockAlerts.length === 0 ? (
-            <div className="py-12 text-center rounded-lg bg-stone-50 border border-stone-200">
+            <div className="py-12 text-center rounded-lg bg-sky-50 border border-stone-200">
               <CheckCircle2 className="w-10 h-10 text-stone-400 mx-auto mb-3" />
               <p className="text-sm font-medium text-stone-800">Tous les stocks sont au-dessus des seuils.</p>
             </div>
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                 </thead>
                 <tbody className="divide-y divide-stone-100">
                   {lowStockAlerts.slice(0, 5).map((p) => (
-                    <tr key={p.id} className="hover:bg-stone-50">
+                    <tr key={p.id} className="hover:bg-sky-50">
                       <td className="py-3 font-mono font-semibold text-stone-700 text-sm">{p.sku}</td>
                       <td className="py-3 pr-4">
                         <p className="font-medium text-stone-900">{p.name}</p>
@@ -186,7 +186,7 @@ export default function DashboardPage() {
 
           <div className="space-y-3">
             {shopStats.map((shop) => (
-              <div key={shop.id} className="p-4 rounded-lg bg-stone-50 border border-stone-200">
+              <div key={shop.id} className="p-4 rounded-lg bg-sky-50 border border-stone-200">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-sm font-semibold text-stone-900">{shop.name}</span>
                   <span className="font-mono font-bold text-stone-700">{shop.unitsDispatched} pcs</span>
@@ -224,7 +224,7 @@ export default function DashboardPage() {
             </thead>
             <tbody className="divide-y divide-stone-100">
               {recentMovements.slice(0, 8).map((m) => (
-                <tr key={m.id} className="hover:bg-stone-50">
+                <tr key={m.id} className="hover:bg-sky-50">
                   <td className="py-3 text-stone-500 whitespace-nowrap">
                     {new Date(m.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}
                   </td>

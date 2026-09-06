@@ -39,16 +39,16 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
             <title>${docNumber} - APS Stock</title>
             <style>
               @page { size: A4 portrait; margin: 15mm; }
-              body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 10px; color: #1c1917; font-size: 13px; }
-              .header { display: flex; justify-content: space-between; border-bottom: 2px solid #44403c; padding-bottom: 12px; margin-bottom: 16px; }
-              .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #fafaf9; border: 1px solid #e7e5e4; padding: 12px; border-radius: 6px; margin-bottom: 16px; font-size: 12px; }
+              body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 10px; color: #0f172a; font-size: 13px; }
+              .header { display: flex; justify-content: space-between; border-bottom: 2px solid #0284c7; padding-bottom: 12px; margin-bottom: 16px; }
+              .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f0f9ff; border: 1px solid #e0f2fe; padding: 12px; border-radius: 6px; margin-bottom: 16px; font-size: 12px; }
               table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 12px; }
-              th, td { border: 1px solid #d6d3d1; padding: 6px 8px; text-align: left; }
-              th { background-color: #44403c; color: white; font-weight: 600; }
+              th, td { border: 1px solid #bae6fd; padding: 6px 8px; text-align: left; }
+              th { background-color: #0284c7; color: white; font-weight: 600; }
               .text-right { text-align: right; }
               .signatures { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 30px; text-align: center; font-size: 12px; }
-              .sig-box { border-top: 1px solid #d6d3d1; padding-top: 4px; font-size: 11px; color: #78716c; margin-top: 45px; }
-              .tag { display: inline-block; background: #44403c; color: #fff; padding: 2px 6px; font-weight: bold; border-radius: 4px; font-size: 11px; }
+              .sig-box { border-top: 1px solid #bae6fd; padding-top: 4px; font-size: 11px; color: #64748b; margin-top: 45px; }
+              .tag { display: inline-block; background: #0284c7; color: #fff; padding: 2px 6px; font-weight: bold; border-radius: 4px; font-size: 11px; }
             </style>
           </head>
           <body>
@@ -77,7 +77,7 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/50 backdrop-blur-xs overflow-y-auto">
       <div className="relative w-full max-w-3xl bg-white border border-stone-200 rounded-lg shadow-xl overflow-hidden my-8">
         {/* Top modal header (hidden during printing) */}
-        <div className="flex items-center justify-between px-6 py-3 border-b border-stone-200 bg-stone-50 no-print">
+        <div className="flex items-center justify-between px-6 py-3 border-b border-stone-200 bg-sky-50 no-print">
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold text-stone-700">Aperçu officiel avant impression</span>
             <span className="px-2 py-0.5 rounded text-sm font-mono bg-stone-100 text-stone-700 border border-stone-200">
@@ -87,7 +87,7 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               Imprimer le document
@@ -126,12 +126,12 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
             </div>
           </div>
 
-          <div className="text-center my-3 py-1.5 bg-stone-50 rounded-lg border border-stone-200">
+          <div className="text-center my-3 py-1.5 bg-sky-50 rounded-lg border border-stone-200">
             <h2 className="text-sm font-bold tracking-wide uppercase text-stone-900">{title}</h2>
           </div>
 
           {/* Metadata Grid */}
-          <div className="grid grid-cols-2 gap-4 p-3.5 rounded-lg bg-stone-50 border border-stone-200 text-sm mb-5">
+          <div className="grid grid-cols-2 gap-4 p-3.5 rounded-lg bg-sky-50 border border-stone-200 text-sm mb-5">
             <div>
               <p className="text-stone-500 font-medium mb-1">
                 {isSortie ? 'DESTINATAIRE (POINT DE VENTE) :' : 'FOURNISSEUR LIVREUR :'}
@@ -169,7 +169,7 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
               </thead>
               <tbody className="divide-y divide-stone-200">
                 {voucher.items?.map((item, index) => (
-                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-stone-50'}>
+                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-sky-50'}>
                     <td className="p-2.5 font-mono text-sm font-semibold text-stone-800 border-r border-stone-200">
                       {item.product?.sku}
                     </td>
@@ -204,7 +204,7 @@ export default function PrintVoucherModal({ isOpen, onClose, voucher, type = 'so
 
           {/* Observations */}
           {voucher.observation && (
-            <div className="p-3 bg-stone-50 border border-stone-200 rounded-lg text-sm mb-5">
+            <div className="p-3 bg-sky-50 border border-stone-200 rounded-lg text-sm mb-5">
               <span className="font-semibold text-stone-700">Observations / Consignes logistiques : </span>
               <span className="text-stone-600">{voucher.observation}</span>
             </div>

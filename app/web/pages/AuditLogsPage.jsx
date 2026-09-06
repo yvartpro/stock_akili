@@ -59,14 +59,14 @@ export default function AuditLogsPage() {
             placeholder="Rechercher par utilisateur, action, détail..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-stone-600 outline-none"
+            className="w-full pl-9 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-sky-500 outline-none"
           />
         </div>
 
         <select
           value={actionFilter}
           onChange={(e) => setActionFilter(e.target.value)}
-          className="px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-700 focus:border-stone-600 outline-none"
+          className="px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-700 focus:border-sky-500 outline-none"
         >
           <option value="">Toutes les actions</option>
           <option value="LOGIN_SUCCESS">Connexions (LOGIN)</option>
@@ -85,7 +85,7 @@ export default function AuditLogsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">Horodatage Exact</th>
                 <th className="p-3.5">Utilisateur Responsable</th>
                 <th className="p-3.5">Action Déclenchée</th>
@@ -111,7 +111,7 @@ export default function AuditLogsPage() {
                 </tr>
               ) : (
                 filteredLogs.map((log) => (
-                  <tr key={log.id} className="hover:bg-stone-50 transition-colors">
+                  <tr key={log.id} className="hover:bg-sky-50 transition-colors">
                     <td className="p-3.5 text-stone-500 font-mono text-sm whitespace-nowrap">
                       {new Date(log.createdAt).toLocaleDateString('fr-FR', {
                         day: '2-digit',

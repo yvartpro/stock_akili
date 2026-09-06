@@ -99,7 +99,7 @@ export default function ReportsPage() {
         <div className="flex items-center gap-2.5">
           <button
             onClick={handleExportCSV}
-            className="flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-stone-50 text-stone-700 text-sm font-semibold rounded-lg border border-stone-200 shadow-sm transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-sky-50 text-stone-700 text-sm font-semibold rounded-lg border border-stone-200 shadow-sm transition-colors cursor-pointer"
           >
             <Download className="w-4 h-4 text-stone-600" />
             Exporter CSV Mouvements
@@ -214,7 +214,7 @@ export default function ReportsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-stone-200 bg-stone-50 text-stone-600 font-semibold uppercase text-sm">
+              <tr className="border-b border-stone-200 bg-sky-50 text-stone-600 font-semibold uppercase text-sm">
                 <th className="p-2.5">SKU</th>
                 <th className="p-2.5">Produit</th>
                 <th className="p-2.5 text-center">Stock Actuel</th>
@@ -233,7 +233,7 @@ export default function ReportsPage() {
                 </tr>
               ) : (
                 replenishmentList.map(item => (
-                  <tr key={item.id} className="hover:bg-stone-50">
+                  <tr key={item.id} className="hover:bg-sky-50">
                     <td className="p-2.5 font-mono font-semibold text-stone-700">{item.sku}</td>
                     <td className="p-2.5 font-medium text-stone-900">{item.name}</td>
                     <td className="p-2.5 text-center font-mono font-bold text-stone-600">{item.currentStock} pcs</td>
@@ -270,7 +270,7 @@ export default function ReportsPage() {
             <select
               value={movementTypeFilter}
               onChange={(e) => setMovementTypeFilter(e.target.value)}
-              className="px-2.5 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-700 focus:border-stone-600 outline-none"
+              className="px-2.5 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-700 focus:border-sky-500 outline-none"
             >
               <option value="">Tous les types</option>
               <option value="ENTREE_RECEPTION">Entrées (Réceptions Fournisseur)</option>
@@ -284,7 +284,7 @@ export default function ReportsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-stone-200 bg-stone-50 text-stone-600 font-semibold uppercase text-sm">
+              <tr className="border-b border-stone-200 bg-sky-50 text-stone-600 font-semibold uppercase text-sm">
                 <th className="p-2.5">Date & Heure</th>
                 <th className="p-2.5">Type</th>
                 <th className="p-2.5">Document Réf.</th>
@@ -298,7 +298,7 @@ export default function ReportsPage() {
               {movements.slice(0, 20).map(m => {
                 const isPos = m.quantityChange > 0;
                 return (
-                  <tr key={m.id} className="hover:bg-stone-50">
+                  <tr key={m.id} className="hover:bg-sky-50">
                     <td className="p-2.5 text-stone-500 text-sm whitespace-nowrap">
                       {new Date(m.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}
                     </td>

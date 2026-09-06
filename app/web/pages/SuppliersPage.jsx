@@ -78,7 +78,7 @@ export default function SuppliersPage() {
 
         <button
           onClick={() => setModalOpen(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Nouveau Fournisseur
@@ -114,7 +114,7 @@ export default function SuppliersPage() {
                 <div className="space-y-1.5 text-sm text-stone-600 mt-3">
                   {sup.contactName && (
                     <p className="flex items-center gap-2 text-stone-700">
-                      <span className="w-2 h-2 rounded-full bg-stone-500" />
+                      <span className="w-2 h-2 rounded-full bg-sky-500" />
                       Contact : <strong className="text-stone-900 font-semibold">{sup.contactName}</strong>
                     </p>
                   )}
@@ -177,7 +177,7 @@ export default function SuppliersPage() {
                     placeholder="FOUR-003"
                     value={code}
                     onChange={(e) => setCode(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -188,7 +188,7 @@ export default function SuppliersPage() {
                     placeholder="Congo Mobile Import SARL"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -201,7 +201,7 @@ export default function SuppliersPage() {
                   placeholder="M. Patrick Kasongo"
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                 />
               </div>
 
@@ -213,7 +213,7 @@ export default function SuppliersPage() {
                     placeholder="+243 81 234 5678"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   />
                 </div>
                 <div>
@@ -223,7 +223,7 @@ export default function SuppliersPage() {
                     placeholder="contact@fournisseur.cd"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   />
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function SuppliersPage() {
                   placeholder="Boulevard du 30 Juin, Gombe, Kinshasa"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                 />
               </div>
 
@@ -250,7 +250,7 @@ export default function SuppliersPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                   <span>{submitting ? 'Enregistrement en cours...' : 'Enregistrer'}</span>

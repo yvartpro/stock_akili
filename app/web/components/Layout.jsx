@@ -85,7 +85,7 @@ export default function Layout({ children }) {
   const currentPage = pageLabels[location.pathname.replace('/', '')] || 'Tableau de bord';
 
   return (
-    <div className="flex h-screen w-full bg-stone-50 text-stone-800 overflow-hidden">
+    <div className="flex h-screen w-full bg-sky-50 text-stone-800 overflow-hidden">
       {mobileOpen && (
         <div
           className="fixed inset-0 z-40 bg-stone-900/30 lg:hidden"
@@ -102,7 +102,7 @@ export default function Layout({ children }) {
         <div className="p-5 border-b border-stone-200">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-white font-bold text-base">
+              <div className="w-10 h-10 rounded-lg bg-sky-600 flex items-center justify-center text-white font-bold text-base">
                 APS
               </div>
               <div>
@@ -132,7 +132,7 @@ export default function Layout({ children }) {
                 `}
               >
                 <div className="flex items-center gap-3">
-                  <Icon className={`w-5 h-5 ${location.pathname === item.to || (item.to !== '/' && location.pathname.startsWith(item.to)) ? 'text-stone-800' : 'text-stone-400 group-hover:text-stone-600'}`} />
+                  <Icon className={`w-5 h-5 ${location.pathname === item.to || (item.to !== '/' && location.pathname.startsWith(item.to)) ? 'text-sky-700' : 'text-stone-400 group-hover:text-sky-600'}`} />
                   <span>{item.label}</span>
                 </div>
                 {item.to === '/stock' && alertCount > 0 && (
@@ -149,10 +149,10 @@ export default function Layout({ children }) {
         </nav>
 
         <div className="p-4 border-t border-stone-200">
-          <div className="p-3 rounded-lg bg-stone-50 border border-stone-200">
+          <div className="p-3 rounded-lg bg-sky-50 border border-sky-100">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-9 h-9 rounded-lg bg-stone-200 flex items-center justify-center font-semibold text-stone-700 text-sm shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-sky-100 flex items-center justify-center font-semibold text-sky-700 text-sm shrink-0">
                   {user?.name?.slice(0, 2).toUpperCase() || 'AP'}
                 </div>
                 <div className="min-w-0">
@@ -165,7 +165,7 @@ export default function Layout({ children }) {
               <button
                 onClick={handleLogout}
                 title="Se déconnecter"
-                className="p-2 text-stone-400 hover:text-stone-700 hover:bg-stone-200 rounded-lg transition-colors shrink-0"
+                className="p-2 text-stone-400 hover:text-sky-700 hover:bg-sky-100 rounded-lg transition-colors shrink-0"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -181,8 +181,8 @@ export default function Layout({ children }) {
                   onClick={() => quickSwitch('admin')}
                   className={`px-2.5 py-1 rounded-lg text-sm font-medium transition-colors ${
                     isAdmin
-                      ? 'bg-stone-700 text-white'
-                      : 'bg-white hover:bg-stone-100 text-stone-600 border border-stone-200'
+                      ? 'bg-sky-600 text-white'
+                      : 'bg-white hover:bg-sky-50 text-stone-600 border border-stone-200'
                   }`}
                 >
                   Admin
@@ -191,8 +191,8 @@ export default function Layout({ children }) {
                   onClick={() => quickSwitch('gestionnaire')}
                   className={`px-2.5 py-1 rounded-lg text-sm font-medium transition-colors ${
                     !isAdmin
-                      ? 'bg-stone-700 text-white'
-                      : 'bg-white hover:bg-stone-100 text-stone-600 border border-stone-200'
+                      ? 'bg-sky-600 text-white'
+                      : 'bg-white hover:bg-sky-50 text-stone-600 border border-stone-200'
                   }`}
                 >
                   Gestionnaire
@@ -208,7 +208,7 @@ export default function Layout({ children }) {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileOpen(true)}
-              className="lg:hidden p-2 rounded-lg bg-stone-100 text-stone-600 hover:text-stone-900"
+              className="lg:hidden p-2 rounded-lg bg-sky-100 text-sky-700 hover:text-sky-900"
             >
               <Menu className="w-5 h-5" />
             </button>
@@ -224,8 +224,8 @@ export default function Layout({ children }) {
               to="/stock?lowStock=true"
               className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors border ${
                 alertCount > 0
-                  ? 'bg-stone-100 text-stone-800 border-stone-300'
-                  : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'
+                  ? 'bg-sky-100 text-sky-800 border-sky-300'
+                  : 'bg-sky-50 text-stone-600 border-stone-200 hover:bg-sky-100'
               }`}
             >
               <Bell className="w-4 h-4" />

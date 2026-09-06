@@ -74,7 +74,7 @@ export default function ProductSearchSelect({
         onClick={handleOpen}
         className={`w-full min-h-[34px] px-2.5 py-1.5 bg-white border rounded-lg text-sm flex items-center justify-between gap-2 cursor-pointer transition-colors ${
           disabled
-            ? 'opacity-60 cursor-not-allowed bg-stone-50 border-stone-200'
+            ? 'opacity-60 cursor-not-allowed bg-sky-50 border-stone-200'
             : isOpen
             ? 'border-stone-600 ring-1 ring-stone-600 shadow-sm'
             : 'border-stone-300 hover:border-stone-400'
@@ -112,7 +112,7 @@ export default function ProductSearchSelect({
       {isOpen && (
         <div className="absolute z-[70] left-0 right-0 top-full mt-1 bg-white border border-stone-300 rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-80 min-w-[340px]">
           {/* Search Input Bar */}
-          <div className="p-2 border-b border-stone-200 bg-stone-50 flex items-center gap-2">
+          <div className="p-2 border-b border-stone-200 bg-sky-50 flex items-center gap-2">
             <Search className="w-4 h-4 text-stone-400 shrink-0" />
             <input
               ref={inputRef}

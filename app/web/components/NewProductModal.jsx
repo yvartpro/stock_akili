@@ -160,7 +160,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-white border border-stone-200 rounded-lg shadow-xl overflow-hidden my-8">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50">
+        <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50">
           <div>
             <h3 className="font-bold text-base text-stone-900">Nouveau Produit au Stock Principal</h3>
             <p className="text-sm text-stone-500">Enregistrement d'une référence unitaire (Pochette ou Protection)</p>
@@ -190,7 +190,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 className={`flex items-center justify-center gap-2 p-2.5 rounded-lg border font-semibold text-sm transition-colors cursor-pointer ${
                   category === 'pochette'
                     ? 'bg-stone-100 text-stone-700 border-stone-300'
-                    : 'bg-white text-stone-600 border-stone-300 hover:bg-stone-50'
+                    : 'bg-white text-stone-600 border-stone-300 hover:bg-sky-50'
                 }`}
               >
                 <Smartphone className="w-4 h-4 text-stone-600" />
@@ -202,7 +202,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 className={`flex items-center justify-center gap-2 p-2.5 rounded-lg border font-semibold text-sm transition-colors cursor-pointer ${
                   category === 'protection'
                     ? 'bg-stone-100 text-stone-700 border-stone-300'
-                    : 'bg-white text-stone-600 border-stone-300 hover:bg-stone-50'
+                    : 'bg-white text-stone-600 border-stone-300 hover:bg-sky-50'
                 }`}
               >
                 <Shield className="w-4 h-4 text-stone-600" />
@@ -237,7 +237,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                   <button
                     type="button"
                     onClick={handleCreateBrand}
-                    className="px-3 py-1.5 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg"
+                    className="px-3 py-1.5 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg"
                   >
                     OK
                   </button>
@@ -246,7 +246,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 <select
                   value={selectedBrandId}
                   onChange={(e) => handleBrandChange(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                   required
                 >
                   {brands.map(b => (
@@ -280,7 +280,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                   <button
                     type="button"
                     onClick={handleCreateModel}
-                    className="px-3 py-1.5 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg"
+                    className="px-3 py-1.5 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg"
                   >
                     OK
                   </button>
@@ -289,7 +289,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 <select
                   value={selectedModelId}
                   onChange={(e) => setSelectedModelId(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                   required
                 >
                   {availableModels.map(m => (
@@ -307,7 +307,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
               <select
                 value={selectedColorId}
                 onChange={(e) => setSelectedColorId(e.target.value)}
-                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                 required
               >
                 {colors.map(c => (
@@ -322,7 +322,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 <select
                   value={protectionType}
                   onChange={(e) => setProtectionType(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                   required
                 >
                   <option value="Verre Trempé 9D">Verre Trempé 9D Bords Incurvés</option>
@@ -339,7 +339,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                   type="text"
                   value={sku}
                   onChange={(e) => setSku(e.target.value.toUpperCase())}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-sky-500 outline-none"
                   required
                 />
               </div>
@@ -353,7 +353,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
                 type="text"
                 value={sku}
                 onChange={(e) => setSku(e.target.value.toUpperCase())}
-                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-stone-600 outline-none"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-sky-500 outline-none"
                 required
               />
             </div>
@@ -366,7 +366,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+              className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
               required
             />
           </div>
@@ -429,7 +429,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer flex items-center gap-2"
+              className="px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer flex items-center gap-2"
             >
               {loading ? 'Création...' : 'Enregistrer le Produit'}
             </button>

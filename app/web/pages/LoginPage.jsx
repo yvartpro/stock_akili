@@ -40,11 +40,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-stone-50 p-6">
+    <div className="min-h-screen w-full flex items-center justify-center bg-sky-50 p-6">
       <div className="w-full max-w-md">
         <div className="card p-8">
           <div className="text-center mb-8">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-lg bg-stone-800 flex items-center justify-center text-white font-bold text-xl">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-lg bg-sky-600 flex items-center justify-center text-white font-bold text-xl">
               APS
             </div>
             <h1 className="text-2xl font-bold text-stone-900">
@@ -107,7 +107,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('admin')}
-                className="p-4 rounded-lg bg-stone-50 hover:bg-stone-100 border border-stone-200 text-left transition-colors cursor-pointer"
+                className="p-4 rounded-lg bg-sky-50 hover:bg-sky-100 border border-sky-200 text-left transition-colors cursor-pointer"
               >
                 <span className="badge mb-2">Admin</span>
                 <p className="text-sm font-semibold text-stone-900">Christian Kabamba</p>
@@ -117,7 +117,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('gestionnaire')}
-                className="p-4 rounded-lg bg-stone-50 hover:bg-stone-100 border border-stone-200 text-left transition-colors cursor-pointer"
+                className="p-4 rounded-lg bg-sky-50 hover:bg-sky-100 border border-sky-200 text-left transition-colors cursor-pointer"
               >
                 <span className="badge mb-2">Gestionnaire</span>
                 <p className="text-sm font-semibold text-stone-900">Grace Tshilombo</p>

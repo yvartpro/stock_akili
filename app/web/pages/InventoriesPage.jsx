@@ -199,7 +199,7 @@ export default function InventoriesPage() {
 
         <button
           onClick={handleStartInventory}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Lancer une Session d'Inventaire
@@ -232,7 +232,7 @@ export default function InventoriesPage() {
       )}
 
       {/* Rules Banner */}
-      <div className="p-3.5 rounded-lg bg-stone-50 border border-stone-200 text-sm text-stone-700 grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="p-3.5 rounded-lg bg-sky-50 border border-stone-200 text-sm text-stone-700 grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
           <p className="font-semibold text-stone-900 mb-1">Règle de séparation des contrôles (Section 9 & 10) :</p>
           <p className="text-stone-600">
@@ -252,7 +252,7 @@ export default function InventoriesPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">N° Inventaire</th>
                 <th className="p-3.5">Date de Réalisation</th>
                 <th className="p-3.5">Responsable / Auditeur</th>
@@ -281,7 +281,7 @@ export default function InventoriesPage() {
                   const isValide = inv.status === 'valide';
 
                   return (
-                    <tr key={inv.id} className="hover:bg-stone-50 transition-colors">
+                    <tr key={inv.id} className="hover:bg-sky-50 transition-colors">
                       <td className="p-3.5 font-mono font-bold text-stone-700 text-sm">
                         {inv.inventoryNumber}
                       </td>
@@ -317,7 +317,7 @@ export default function InventoriesPage() {
                           {!isValide && (
                             <button
                               onClick={() => setInventoryToValidate(inv)}
-                              className="flex items-center gap-1 px-2.5 py-1 rounded bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold transition-colors cursor-pointer shadow-sm"
+                              className="flex items-center gap-1 px-2.5 py-1 rounded bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold transition-colors cursor-pointer shadow-sm"
                               title="Valider et appliquer la régularisation au stock central"
                             >
                               <CheckCircle2 className="w-3.5 h-3.5" />
@@ -345,7 +345,7 @@ export default function InventoriesPage() {
       {sessionOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs overflow-y-auto">
           <div className="relative w-full max-w-5xl bg-white border border-stone-200 rounded-lg shadow-xl overflow-hidden my-6">
-            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50">
+            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50">
               <div>
                 <h3 className="font-bold text-base text-stone-900 flex items-center gap-2">
                   <ClipboardCheck className="w-5 h-5 text-stone-600" />
@@ -378,7 +378,7 @@ export default function InventoriesPage() {
                     type="date"
                     value={inventoryDate}
                     onChange={(e) => setInventoryDate(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                     required
                   />
                 </div>
@@ -388,7 +388,7 @@ export default function InventoriesPage() {
                     type="text"
                     value={observation}
                     onChange={(e) => setObservation(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   />
                 </div>
               </div>
@@ -402,7 +402,7 @@ export default function InventoriesPage() {
                     placeholder="Filtrer un SKU ou modèle..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-8 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-stone-600 outline-none"
+                    className="w-full pl-8 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-sky-500 outline-none"
                   />
                 </div>
                 <div className="text-sm">
@@ -416,7 +416,7 @@ export default function InventoriesPage() {
               {/* Items Table */}
               <div className="border border-stone-200 rounded-lg overflow-hidden max-h-96 overflow-y-auto">
                 <table className="w-full text-left text-sm">
-                  <thead className="sticky top-0 bg-stone-50 border-b border-stone-200 text-stone-600">
+                  <thead className="sticky top-0 bg-sky-50 border-b border-stone-200 text-stone-600">
                     <tr>
                       <th className="p-3">SKU & Produit</th>
                       <th className="p-3 text-center">Stock Théorique</th>
@@ -431,7 +431,7 @@ export default function InventoriesPage() {
                       const hasDiff = diff !== 0;
 
                       return (
-                        <tr key={item.productId} className={`hover:bg-stone-50 ${hasDiff ? 'bg-stone-100/50' : ''}`}>
+                        <tr key={item.productId} className={`hover:bg-sky-50 ${hasDiff ? 'bg-stone-100/50' : ''}`}>
                           <td className="p-3 max-w-xs">
                             <span className="font-mono text-stone-700 font-bold block text-sm">{item.sku}</span>
                             <span className="text-stone-900 font-medium truncate block">{item.name}</span>
@@ -454,7 +454,7 @@ export default function InventoriesPage() {
                                 min="0"
                                 value={item.physicalStock}
                                 onChange={(e) => handlePhysicalStockChange(item.productId, e.target.value)}
-                                className="w-16 px-1.5 py-1 bg-white border border-stone-300 rounded-lg text-center font-mono font-bold text-stone-900 text-sm focus:border-stone-600 outline-none"
+                                className="w-16 px-1.5 py-1 bg-white border border-stone-300 rounded-lg text-center font-mono font-bold text-stone-900 text-sm focus:border-sky-500 outline-none"
                               />
                               <button
                                 type="button"
@@ -484,7 +484,7 @@ export default function InventoriesPage() {
                               value={item.justification || ''}
                               onChange={(e) => handleJustificationChange(item.productId, e.target.value)}
                               className={`w-full px-2.5 py-1 bg-white border rounded-lg text-sm text-stone-900 placeholder:text-stone-400 outline-none ${
-                                hasDiff && !item.justification ? 'border-stone-500 bg-stone-100/30' : 'border-stone-300 focus:border-stone-600'
+                                hasDiff && !item.justification ? 'border-stone-500 bg-stone-100/30' : 'border-stone-300 focus:border-sky-500'
                               }`}
                               required={hasDiff}
                             />
@@ -511,7 +511,7 @@ export default function InventoriesPage() {
                   <button
                     type="submit"
                     disabled={saving}
-                    className="px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                    className="px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                   >
                     {saving ? 'Sauvegarde...' : 'Enregistrer la Feuille d\'Inventaire'}
                   </button>
@@ -526,7 +526,7 @@ export default function InventoriesPage() {
       {selectedInventory && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs overflow-y-auto">
           <div className="relative w-full max-w-3xl bg-white border border-stone-200 rounded-lg shadow-xl overflow-hidden my-6">
-            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50">
+            <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50">
               <div>
                 <h3 className="font-bold text-base text-stone-900">
                   Fiche d'Inventaire : {selectedInventory.inventoryNumber}
@@ -546,7 +546,7 @@ export default function InventoriesPage() {
             <div className="p-6 space-y-4">
               <div className="border border-stone-200 rounded-lg overflow-hidden max-h-80 overflow-y-auto">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-stone-50 border-b border-stone-200 text-stone-600">
+                  <thead className="bg-sky-50 border-b border-stone-200 text-stone-600">
                     <tr>
                       <th className="p-3">Produit</th>
                       <th className="p-3 text-center">Théorique</th>
@@ -597,7 +597,7 @@ export default function InventoriesPage() {
                     <button
                       onClick={() => setInventoryToValidate(selectedInventory)}
                       disabled={adjusting}
-                      className="flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm cursor-pointer"
+                      className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm cursor-pointer"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Valider & Régulariser les Écarts
@@ -628,7 +628,7 @@ export default function InventoriesPage() {
               </div>
             </div>
 
-            <div className="bg-stone-50 border border-stone-200 rounded-lg p-3.5 text-sm text-stone-700 mb-5 space-y-2">
+            <div className="bg-sky-50 border border-stone-200 rounded-lg p-3.5 text-sm text-stone-700 mb-5 space-y-2">
               <p>
                 Cette opération va <strong className="text-stone-900">mettre à jour définitivement le stock central</strong> en appliquant les écarts constatés :
               </p>
@@ -652,7 +652,7 @@ export default function InventoriesPage() {
                   setActionError('');
                 }}
                 disabled={adjusting}
-                className="px-3.5 py-1.5 text-sm font-medium text-stone-600 hover:text-stone-800 rounded-lg border border-stone-200 hover:bg-stone-50 transition-colors"
+                className="px-3.5 py-1.5 text-sm font-medium text-stone-600 hover:text-stone-800 rounded-lg border border-stone-200 hover:bg-sky-50 transition-colors"
               >
                 Annuler
               </button>
@@ -660,7 +660,7 @@ export default function InventoriesPage() {
                 type="button"
                 onClick={() => handleApplyAdjustments(inventoryToValidate.id)}
                 disabled={adjusting}
-                className="flex items-center gap-1.5 px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
               >
                 {adjusting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                 {adjusting ? 'Régularisation en cours...' : 'Confirmer la Régularisation'}

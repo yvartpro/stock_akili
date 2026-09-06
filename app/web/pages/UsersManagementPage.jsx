@@ -83,7 +83,7 @@ export default function UsersManagementPage() {
 
         <button
           onClick={() => setModalOpen(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Nouvel Utilisateur
@@ -95,7 +95,7 @@ export default function UsersManagementPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
+              <tr className="bg-sky-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">Nom Complet</th>
                 <th className="p-3.5">Email de Connexion</th>
                 <th className="p-3.5">Rôle Système</th>
@@ -113,7 +113,7 @@ export default function UsersManagementPage() {
                 </tr>
               ) : (
                 users.map((u) => (
-                  <tr key={u.id} className="hover:bg-stone-50 transition-colors">
+                  <tr key={u.id} className="hover:bg-sky-50 transition-colors">
                     <td className="p-3.5">
                       <p className="font-semibold text-stone-900">{u.name}</p>
                     </td>
@@ -183,7 +183,7 @@ export default function UsersManagementPage() {
                   placeholder="Jean Dupont"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   required
                 />
               </div>
@@ -195,7 +195,7 @@ export default function UsersManagementPage() {
                   placeholder="j.dupont@aps.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   required
                 />
               </div>
@@ -207,7 +207,7 @@ export default function UsersManagementPage() {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   required
                 />
               </div>
@@ -217,7 +217,7 @@ export default function UsersManagementPage() {
                 <select
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
                   required
                 >
                   <option value="gestionnaire">Gestionnaire de Stock Principal (Stock, Bons, Réceptions)</option>
@@ -236,7 +236,7 @@ export default function UsersManagementPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+                  className="px-3.5 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting ? 'Création...' : 'Créer l\'utilisateur'}
                 </button>

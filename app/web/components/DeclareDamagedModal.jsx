@@ -98,7 +98,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
       <div className={`relative w-full max-w-xl bg-white border border-stone-200 rounded-xl shadow-2xl overflow-hidden my-6 flex flex-col transition-all duration-200 ${
         searchOpened ? 'min-h-[620px]' : 'min-h-[480px]'
       }`}>
-        <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50 shrink-0">
+        <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-sky-50 shrink-0">
           <div className="flex items-center gap-2 text-stone-600">
             <AlertOctagon className="w-5 h-5" />
             <h3 className="font-bold text-base text-stone-900">Déclarer une Casse / Perte</h3>
@@ -160,7 +160,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
               <div className={`p-3 rounded-lg border text-sm ${
                 isOutOfStock 
                   ? 'bg-stone-100/70 border-stone-200' 
-                  : 'bg-stone-50 border-stone-200'
+                  : 'bg-sky-50 border-stone-200'
               }`}>
                 <div className="flex justify-between items-start gap-2">
                   <div>
@@ -192,7 +192,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-500 outline-none"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-sky-500 outline-none"
                 required
               >
                 <option value="endommage">Endommagé (Casse, verre trempé fêlé, choc)</option>
@@ -212,7 +212,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
                 disabled={isOutOfStock}
-                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-stone-500 outline-none disabled:bg-stone-100 disabled:text-stone-400"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-sky-500 outline-none disabled:bg-stone-100 disabled:text-stone-400"
                 required
               />
             </div>
@@ -226,7 +226,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Ex: 5 verres trempés fissurés suite au déchargement du carton au stock central..."
-                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-500 outline-none placeholder:text-stone-400"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none placeholder:text-stone-400"
                 required
               />
             </div>
@@ -243,7 +243,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
             <button
               type="submit"
               disabled={loading || !currentActiveProduct || isOutOfStock}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-sky-600 hover:bg-sky-600 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               {loading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
               <span>{loading ? 'Enregistrement en cours...' : 'Valider l\'anomalie'}</span>
