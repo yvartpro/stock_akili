@@ -1,83 +1,71 @@
 import { Router } from 'express';
 import { verifyToken, requireRole } from '../middleware/auth.js';
-import * as authController from '../controllers/authController.js';
-import * as productsController from '../controllers/productsController.js';
-import * as categoriesController from '../controllers/categoriesController.js';
-import * as suppliersController from '../controllers/suppliersController.js';
-import * as shopsController from '../controllers/shopsController.js';
-import * as receptionsController from '../controllers/receptionsController.js';
-import * as exitVouchersController from '../controllers/exitVouchersController.js';
-import * as inventoriesController from '../controllers/inventoriesController.js';
-import * as damagedController from '../controllers/damagedController.js';
-import * as reportsController from '../controllers/reportsController.js';
-import * as auditController from '../controllers/auditController.js';
-import * as usersController from '../controllers/usersController.js';
+import authController from '../controllers/authController.js';
+import productsController from '../controllers/productsController.js';
+import categoriesController from '../controllers/categoriesController.js';
+import suppliersController from '../controllers/suppliersController.js';
+import shopsController from '../controllers/shopsController.js';
+import receptionsController from '../controllers/receptionsController.js';
+import exitVouchersController from '../controllers/exitVouchersController.js';
+import inventoriesController from '../controllers/inventoriesController.js';
+import damagedController from '../controllers/damagedController.js';
+import reportsController from '../controllers/reportsController.js';
+import auditController from '../controllers/auditController.js';
+import usersController from '../controllers/usersController.js';
 
 const router = Router();
 
-// 1. Auth routes (public login, protected me & logout)
-router.post('/auth/login', authController.login);
-router.get('/auth/me', verifyToken, authController.getMe);
-router.post('/auth/logout', verifyToken, authController.logout);
+router.post('/auth/login', authController.login.bind(authController));
+router.get('/auth/me', verifyToken, authController.getMe.bind(authController));
+router.post('/auth/logout', verifyToken, authController.logout.bind(authController));
 
-// 2. Products
-router.get('/products', verifyToken, productsController.getProducts);
-router.get('/products/alerts', verifyToken, productsController.getAlerts);
-router.get('/products/:id', verifyToken, productsController.getProductById);
-router.post('/products', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.createProduct);
-router.put('/products/:id', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.updateProduct);
-router.patch('/products/:id/status', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.updateProductStatus);
+router.get('/products', verifyToken, productsController.getProducts.bind(productsController));
+router.get('/products/alerts', verifyToken, productsController.getAlerts.bind(productsController));
+router.get('/products/:id', verifyToken, productsController.getProductById.bind(productsController));
+router.post('/products', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.createProduct.bind(productsController));
+router.put('/products/:id', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.updateProduct.bind(productsController));
+router.patch('/products/:id/status', verifyToken, requireRole(['admin', 'gestionnaire']), productsController.updateProductStatus.bind(productsController));
 
-// 3. Brands, Models, Colors
-router.get('/categories/brands', verifyToken, categoriesController.getBrands);
-router.post('/categories/brands', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createBrand);
-router.post('/categories/models', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createModel);
-router.get('/categories/colors', verifyToken, categoriesController.getColors);
-router.post('/categories/colors', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createColor);
+router.get('/categories/brands', verifyToken, categoriesController.getBrands.bind(categoriesController));
+router.post('/categories/brands', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createBrand.bind(categoriesController));
+router.post('/categories/models', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createModel.bind(categoriesController));
+router.get('/categories/colors', verifyToken, categoriesController.getColors.bind(categoriesController));
+router.post('/categories/colors', verifyToken, requireRole(['admin', 'gestionnaire']), categoriesController.createColor.bind(categoriesController));
 
-// 4. Suppliers (Fournisseurs)
-router.get('/suppliers', verifyToken, suppliersController.getSuppliers);
-router.get('/suppliers/:id', verifyToken, suppliersController.getSupplierById);
-router.post('/suppliers', verifyToken, requireRole(['admin', 'gestionnaire']), suppliersController.createSupplier);
-router.put('/suppliers/:id', verifyToken, requireRole(['admin', 'gestionnaire']), suppliersController.updateSupplier);
+router.get('/suppliers', verifyToken, suppliersController.getSuppliers.bind(suppliersController));
+router.get('/suppliers/:id', verifyToken, suppliersController.getSupplierById.bind(suppliersController));
+router.post('/suppliers', verifyToken, requireRole(['admin', 'gestionnaire']), suppliersController.createSupplier.bind(suppliersController));
+router.put('/suppliers/:id', verifyToken, requireRole(['admin', 'gestionnaire']), suppliersController.updateSupplier.bind(suppliersController));
 
-// 5. Shops (Points de vente passifs)
-router.get('/shops', verifyToken, shopsController.getShops);
-router.get('/shops/:id', verifyToken, shopsController.getShopById);
-router.post('/shops', verifyToken, requireRole(['admin', 'gestionnaire']), shopsController.createShop);
-router.put('/shops/:id', verifyToken, requireRole(['admin', 'gestionnaire']), shopsController.updateShop);
+router.get('/shops', verifyToken, shopsController.getShops.bind(shopsController));
+router.get('/shops/:id', verifyToken, shopsController.getShopById.bind(shopsController));
+router.post('/shops', verifyToken, requireRole(['admin', 'gestionnaire']), shopsController.createShop.bind(shopsController));
+router.put('/shops/:id', verifyToken, requireRole(['admin', 'gestionnaire']), shopsController.updateShop.bind(shopsController));
 
-// 6. Receptions (Entrées)
-router.get('/receptions', verifyToken, receptionsController.getReceptions);
-router.get('/receptions/:id', verifyToken, receptionsController.getReceptionById);
-router.post('/receptions', verifyToken, requireRole(['admin', 'gestionnaire']), receptionsController.createReception);
+router.get('/receptions', verifyToken, receptionsController.getReceptions.bind(receptionsController));
+router.get('/receptions/:id', verifyToken, receptionsController.getReceptionById.bind(receptionsController));
+router.post('/receptions', verifyToken, requireRole(['admin', 'gestionnaire']), receptionsController.createReception.bind(receptionsController));
 
-// 7. Exit Vouchers (Bons de sortie)
-router.get('/exit-vouchers', verifyToken, exitVouchersController.getExitVouchers);
-router.get('/exit-vouchers/:id', verifyToken, exitVouchersController.getExitVoucherById);
-router.post('/exit-vouchers', verifyToken, requireRole(['admin', 'gestionnaire']), exitVouchersController.createExitVoucher);
+router.get('/exit-vouchers', verifyToken, exitVouchersController.getExitVouchers.bind(exitVouchersController));
+router.get('/exit-vouchers/:id', verifyToken, exitVouchersController.getExitVoucherById.bind(exitVouchersController));
+router.post('/exit-vouchers', verifyToken, requireRole(['admin', 'gestionnaire']), exitVouchersController.createExitVoucher.bind(exitVouchersController));
 
-// 8. Inventories (Inventaires périodiques & écarts)
-router.get('/inventories', verifyToken, inventoriesController.getInventories);
-router.get('/inventories/prepare', verifyToken, inventoriesController.prepareInventory);
-router.get('/inventories/:id', verifyToken, inventoriesController.getInventoryById);
-router.post('/inventories', verifyToken, requireRole(['admin', 'gestionnaire']), inventoriesController.createInventory);
-router.post('/inventories/:id/adjust', verifyToken, requireRole(['admin', 'gestionnaire']), inventoriesController.applyInventoryAdjustments);
+router.get('/inventories', verifyToken, inventoriesController.getInventories.bind(inventoriesController));
+router.get('/inventories/prepare', verifyToken, inventoriesController.prepareInventory.bind(inventoriesController));
+router.get('/inventories/:id', verifyToken, inventoriesController.getInventoryById.bind(inventoriesController));
+router.post('/inventories', verifyToken, requireRole(['admin', 'gestionnaire']), inventoriesController.createInventory.bind(inventoriesController));
+router.post('/inventories/:id/adjust', verifyToken, requireRole(['admin', 'gestionnaire']), inventoriesController.applyInventoryAdjustments.bind(inventoriesController));
 
-// 9. Damaged / Lost / Out of Service Products (Section 11)
-router.get('/damaged', verifyToken, damagedController.getDamagedProducts);
-router.post('/damaged', verifyToken, requireRole(['admin', 'gestionnaire']), damagedController.declareDamaged);
+router.get('/damaged', verifyToken, damagedController.getDamagedProducts.bind(damagedController));
+router.post('/damaged', verifyToken, requireRole(['admin', 'gestionnaire']), damagedController.declareDamaged.bind(damagedController));
 
-// 10. Reports & Movements
-router.get('/reports/dashboard', verifyToken, reportsController.getDashboardStats);
-router.get('/reports/movements', verifyToken, reportsController.getStockMovements);
+router.get('/reports/dashboard', verifyToken, reportsController.getDashboardStats.bind(reportsController));
+router.get('/reports/movements', verifyToken, reportsController.getStockMovements.bind(reportsController));
 
-// 11. Audit Logs (Admin only per Cahier des charges)
-router.get('/audit', verifyToken, requireRole(['admin']), auditController.getAuditLogs);
+router.get('/audit', verifyToken, requireRole(['admin']), auditController.getAuditLogs.bind(auditController));
 
-// 12. Users & Roles (Admin only per Cahier des charges)
-router.get('/users', verifyToken, requireRole(['admin']), usersController.getUsers);
-router.post('/users', verifyToken, requireRole(['admin']), usersController.createUser);
-router.put('/users/:id', verifyToken, requireRole(['admin']), usersController.updateUser);
+router.get('/users', verifyToken, requireRole(['admin']), usersController.getUsers.bind(usersController));
+router.post('/users', verifyToken, requireRole(['admin']), usersController.createUser.bind(usersController));
+router.put('/users/:id', verifyToken, requireRole(['admin']), usersController.updateUser.bind(usersController));
 
 export default router;
