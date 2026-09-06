@@ -7,5 +7,5 @@ const router = Router();
 router.get('/', verifyToken, requireRole(['admin']), usersController.getUsers.bind(usersController));
 router.post('/', verifyToken, requireRole(['admin']), usersController.createUser.bind(usersController));
 router.put('/:id', verifyToken, requireRole(['admin']), usersController.updateUser.bind(usersController));
-
+router.delete('/:id', verifyToken, requireRole(['admin']), usersController.deleteUser.bind(usersController));
 export default router;

@@ -4,6 +4,10 @@ migrate\:undo:
 	npx sequelize-cli db:migrate:undo
 migrate\:undo\:all:
 	npx sequelize-cli db:migrate:undo:all
+seed:
+	npx sequelize-cli db:seed:all
+seed\:undo:
+	npx sequelize-cli db:seed:undo
 run:
 	nodemon index.js
 build:

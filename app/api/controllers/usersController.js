@@ -95,6 +95,29 @@ class UsersController {
       return res.status(500).json({ error: 'Erreur lors de la mise à jour.' });
     }
   }
+
+  async deleteUser(req, res) {
+    try {
+      const { id } = req.params;
+
+      const user = await User.findByPk(id);
+      if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
+
+      await user.destroy();
+
+      await logAudit({
+        req,
+        action: 'SUPPRESSION_UTILISATEUR',
+        entityType: 'User',
+        entityId: user.id,
+        details: `Suppression de l'utilisateur ${user.name} (${user.email})`
+      });
+
+      return res.json({ message: 'Utilisateur supprimé avec succès.' });
+    } catch (error) {
+      return res.status(500).json({ error: 'Erreur lors de la suppression.' });
+    }
+  }
 }
 
 const usersController = new UsersController();
