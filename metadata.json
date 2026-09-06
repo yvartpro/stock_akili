@@ -1,6 +1,4 @@
 {
   "name": "APS Stock Principal",
-  "description": "Système informatisé de gestion du stock principal de pochettes de téléphones et protections anti-casse pour le magasin APS.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Système informatisé de gestion du stock principal de pochettes de téléphones et protections anti-casse pour le magasin APS."
 }

@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# APS Stock Principal
 
-# Run and deploy your AI Studio app
+Application de gestion de stock pour le magasin APS.
 
-This contains everything you need to run your app locally.
+## Stack
+- Node.js + Express
+- MySQL + Sequelize
+- React + Vite
 
-View your app in AI Studio: https://ai.studio/apps/5e3b5b0e-cdb4-41e3-bc06-ff19db50d4bc
+## Installation
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
+1. Installer les dépendances :
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Créer un fichier `.env` à partir de `.env.example` et ajuster les variables de connexion MySQL.
+3. Créer la base de données MySQL correspondante.
+
+## Démarrage local
+
+```bash
+npm run dev
+```
+
+L'application sera disponible sur : http://localhost:3000
+
+## Build de production
+
+```bash
+npm run build
+```
