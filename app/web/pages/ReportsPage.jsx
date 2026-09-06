@@ -91,9 +91,6 @@ export default function ReportsPage() {
             <BarChart3 className="w-5 h-5 text-stone-600" />
             Rapports Analytiques & Grand Livre des Mouvements
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Valorisation financière, propositions d'achat et traçabilité comptable du stock central
-          </p>
         </div>
 
         <div className="flex items-center gap-2.5">
@@ -203,11 +200,8 @@ export default function ReportsPage() {
           <AlertTriangle className="w-4 h-4 text-stone-600" />
           <div>
             <h3 className="font-bold text-sm text-stone-900">
-              Suggestions d'Approvisionnement Urgent (Articles sous seuil)
+              Suggestions d'Approvisionnement Urgent
             </h3>
-            <p className="text-sm text-stone-500">
-              Calcul automatique de la commande recommandée pour reconstituer le stock de sécurité
-            </p>
           </div>
         </div>
 
@@ -262,7 +256,6 @@ export default function ReportsPage() {
             <Clock className="w-4 h-4 text-stone-600" />
             <div>
               <h3 className="font-bold text-sm text-stone-900">Grand Livre des Mouvements de Stock</h3>
-              <p className="text-sm text-stone-500">Journal chronologique inaltérable de tous les flux physiques</p>
             </div>
           </div>
 

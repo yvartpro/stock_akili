@@ -76,9 +76,6 @@ export default function UsersManagementPage() {
             <Users className="w-5 h-5 text-stone-600" />
             Gestion des Utilisateurs & Rôles de Sécurité
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Contrôle d'accès basé sur les rôles (RBAC) : Administrateur système et Gestionnaires du stock principal
-          </p>
         </div>
 
         <button

@@ -68,9 +68,6 @@ export default function ShopsPage() {
             <Store className="w-5 h-5 text-stone-600" />
             Points de Vente APS (Shops Destinataires)
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Boutiques approvisionnées exclusivement par le stock central (aucun retour autorisé)
-          </p>
         </div>
 
         <button

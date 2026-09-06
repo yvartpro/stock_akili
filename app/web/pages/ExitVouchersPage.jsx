@@ -148,11 +148,8 @@ export default function ExitVouchersPage() {
         <div>
           <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
             <ArrowUpFromLine className="w-5 h-5 text-stone-600" />
-            Bons de Sortie (Approvisionnement des Shops)
+            Bons de Sortie
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Sortie stricte avec vérification temps réel des stocks et génération automatique des bons
-          </p>
         </div>
 
         <button
@@ -162,15 +159,6 @@ export default function ExitVouchersPage() {
           <Plus className="w-4 h-4" />
           Nouveau Bon de Sortie
         </button>
-      </div>
-
-      {/* Strict Rule Notice */}
-      <div className="p-3 rounded-lg bg-stone-100 border border-stone-200 text-sm text-stone-900 flex items-center gap-2.5">
-        <ShieldAlert className="w-4 h-4 text-stone-600 shrink-0" />
-        <div>
-          <strong className="font-semibold">Règles métier strictes (Section 10) : </strong>
-          Une sortie ne peut jamais dépasser le stock disponible. Les bons validés deviennent immédiatement non modifiables et décrémentent le stock central. Aucun retour shop vers stock principal n'est accepté.
-        </div>
       </div>
 
       {/* History Table */}

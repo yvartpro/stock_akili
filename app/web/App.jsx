@@ -16,6 +16,7 @@ import ShopsPage from './pages/ShopsPage.jsx';
 import ReportsPage from './pages/ReportsPage.jsx';
 import AuditLogsPage from './pages/AuditLogsPage.jsx';
 import UsersManagementPage from './pages/UsersManagementPage.jsx';
+import SettingsPage from './pages/SettingsPage.jsx';
 
 // Protected route guard
 function ProtectedRoute({ children, adminOnly = false }) {
@@ -142,6 +143,17 @@ export default function App() {
             <ProtectedRoute>
               <Layout>
                 <ReportsPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/parametres"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <SettingsPage />
               </Layout>
             </ProtectedRoute>
           }

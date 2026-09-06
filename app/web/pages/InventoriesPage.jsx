@@ -192,9 +192,6 @@ export default function InventoriesPage() {
             <ClipboardCheck className="w-5 h-5 text-stone-600" />
             Inventaires Périodiques & Contrôle des Écarts
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Comparaison stock théorique vs stock physique, justification obligatoire des écarts et régularisation autorisée
-          </p>
         </div>
 
         <button
@@ -230,22 +227,6 @@ export default function InventoriesPage() {
           </button>
         </div>
       )}
-
-      {/* Rules Banner */}
-      <div className="p-3.5 rounded-lg bg-sky-50 border border-stone-200 text-sm text-stone-700 grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div>
-          <p className="font-semibold text-stone-900 mb-1">Règle de séparation des contrôles (Section 9 & 10) :</p>
-          <p className="text-stone-600">
-            Les écarts détectés lors d'un inventaire <strong className="font-semibold text-stone-800">ne modifient pas automatiquement le stock</strong>. L'inventaire constate d'abord la réalité terrain avec justification obligatoire.
-          </p>
-        </div>
-        <div>
-          <p className="font-semibold text-stone-900 mb-1">Validation & Historisation :</p>
-          <p className="text-stone-600">
-            La correction de stock doit être validée par un utilisateur autorisé et enregistrée dans le journal des mouvements d'ajustement.
-          </p>
-        </div>
-      </div>
 
       {/* Inventories List */}
       <div className="rounded-lg bg-white border border-stone-200 overflow-hidden shadow-sm">
@@ -351,9 +332,6 @@ export default function InventoriesPage() {
                   <ClipboardCheck className="w-5 h-5 text-stone-600" />
                   Feuille de Comptage Physique de l'Inventaire
                 </h3>
-                <p className="text-sm text-stone-500">
-                  Saisissez les quantités réellement comptées dans les allées et bacs du stock central
-                </p>
               </div>
               <button
                 onClick={() => setSessionOpen(false)}

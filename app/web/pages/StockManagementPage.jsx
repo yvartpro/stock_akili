@@ -119,9 +119,6 @@ export default function StockManagementPage() {
             <Boxes className="w-5 h-5 text-stone-600" />
             Stock Principal des Articles
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Catalogue unitaire : Pochettes de téléphones & Protections anti-casse
-          </p>
         </div>
 
         <div className="flex items-center gap-2">

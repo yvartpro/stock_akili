@@ -42,11 +42,8 @@ export default function AuditLogsPage() {
         <div>
           <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-stone-600" />
-            Piste d'Audit & Journalisation des Opérations (Art. 12)
+            Piste d'Audit & Journalisation
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Journal inaltérable de sécurité : traçabilité complète des utilisateurs, réceptions, sorties et ajustements
-          </p>
         </div>
       </div>
 

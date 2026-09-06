@@ -71,9 +71,6 @@ export default function SuppliersPage() {
             <Truck className="w-5 h-5 text-stone-600" />
             Fournisseurs Partenaires
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Répertoire des fabricants et importateurs officiels pour les réceptions de marchandises
-          </p>
         </div>
 
         <button

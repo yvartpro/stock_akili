@@ -151,9 +151,6 @@ export default function ReceptionsPage() {
             <ArrowDownToLine className="w-5 h-5 text-stone-600" />
             Réceptions de Marchandises (Entrées en Stock)
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Toute entrée est obligatoirement rattachée à un fournisseur enregistré avec traçabilité complète
-          </p>
         </div>
 
         <button

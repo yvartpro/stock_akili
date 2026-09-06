@@ -73,9 +73,6 @@ export default function DamagedProductsPage() {
             <AlertOctagon className="w-5 h-5 text-stone-600" />
             Registre des Articles Endommagés & Pertes (Art. 11)
           </h2>
-          <p className="text-sm text-stone-500 mt-0.5">
-            Aucun article n'est jamais supprimé : traçabilité complète des fêlures, casses et pertes
-          </p>
         </div>
 
         <button

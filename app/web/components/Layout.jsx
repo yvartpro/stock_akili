@@ -12,6 +12,7 @@ import {
   Truck,
   Store,
   BarChart3,
+  Settings,
   ShieldCheck,
   Users,
   LogOut,
@@ -62,6 +63,7 @@ export default function Layout({ children }) {
     { to: '/fournisseurs', label: 'Fournisseurs', icon: Truck },
     { to: '/shops', label: 'Points de Vente', icon: Store },
     { to: '/rapports', label: 'Rapports', icon: BarChart3 },
+    { to: '/parametres', label: 'Paramètres', icon: Settings },
     ...(isAdmin ? [
       { to: '/audit', label: 'Journaux d\'Audit', icon: ShieldCheck, adminOnly: true },
       { to: '/utilisateurs', label: 'Utilisateurs', icon: Users, adminOnly: true },
@@ -78,6 +80,7 @@ export default function Layout({ children }) {
     fournisseurs: 'Fournisseurs',
     shops: 'Points de Vente',
     rapports: 'Rapports',
+    parametres: 'Paramètres',
     audit: 'Journaux d\'Audit',
     utilisateurs: 'Utilisateurs',
   };
@@ -140,9 +143,6 @@ export default function Layout({ children }) {
                     {alertCount}
                   </span>
                 )}
-                {item.adminOnly && (
-                  <span className="badge text-sm">Admin</span>
-                )}
               </NavLink>
             );
           })}
@@ -156,10 +156,7 @@ export default function Layout({ children }) {
                   {user?.name?.slice(0, 2).toUpperCase() || 'AP'}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-stone-900 truncate">{user?.name || 'Utilisateur'}</p>
-                  <span className="badge text-sm mt-0.5">
-                    {isAdmin ? 'Administrateur' : 'Gestionnaire'}
-                  </span>
+                  <p className="text-sm font-semibold text-stone-900 truncate">{user?.name?.split(" ")[0] || 'Utilisateur'}</p>
                 </div>
               </div>
               <button
@@ -169,35 +166,6 @@ export default function Layout({ children }) {
               >
                 <LogOut className="w-4 h-4" />
               </button>
-            </div>
-
-            <div className="pt-3 border-t border-stone-200 flex items-center justify-between text-sm text-stone-500">
-              <span className="flex items-center gap-1.5">
-                <UserCheck className="w-4 h-4 text-stone-400" />
-                Rôle
-              </span>
-              <div className="flex gap-1">
-                <button
-                  onClick={() => quickSwitch('admin')}
-                  className={`px-2.5 py-1 rounded-lg text-sm font-medium transition-colors ${
-                    isAdmin
-                      ? 'bg-sky-600 text-white'
-                      : 'bg-white hover:bg-sky-50 text-stone-600 border border-stone-200'
-                  }`}
-                >
-                  Admin
-                </button>
-                <button
-                  onClick={() => quickSwitch('gestionnaire')}
-                  className={`px-2.5 py-1 rounded-lg text-sm font-medium transition-colors ${
-                    !isAdmin
-                      ? 'bg-sky-600 text-white'
-                      : 'bg-white hover:bg-sky-50 text-stone-600 border border-stone-200'
-                  }`}
-                >
-                  Gestionnaire
-                </button>
-              </div>
             </div>
           </div>
         </div>
