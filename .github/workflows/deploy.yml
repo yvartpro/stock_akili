@@ -37,3 +37,8 @@ jobs:
             make migrate
 
             pm2 restart stock
+      - name: Debug Secret Presence
+        run: |
+          echo "Is HOST set? ${{ secrets.VPS_HOST != '' }}"
+          echo "Is USER set? ${{ secrets.VPS_USER != '' }}"
+          echo "Is KEY set?  ${{ secrets.VPS_SSH_KEY != '' }}"
