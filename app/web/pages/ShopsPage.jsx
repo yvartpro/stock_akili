@@ -7,7 +7,6 @@ export default function ShopsPage() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const [code, setCode] = useState('');
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [managerName, setManagerName] = useState('');
@@ -38,7 +37,6 @@ export default function ShopsPage() {
 
     try {
       await api.createShop({
-        code: code.toUpperCase(),
         name,
         location,
         managerName,
@@ -46,7 +44,6 @@ export default function ShopsPage() {
       });
 
       setModalOpen(false);
-      setCode('');
       setName('');
       setLocation('');
       setManagerName('');
@@ -146,7 +143,7 @@ export default function ShopsPage() {
               Créer un Nouveau Point de Vente
             </h3>
             <p className="text-sm text-stone-500 mb-3.5">
-              Ce shop apparaîtra comme destinataire dans les formulaires de bons de sortie
+              Le code shop sera généré automatiquement. Ce point de vente apparaîtra comme destinataire dans les bons de sortie.
             </p>
 
             {error && (
@@ -157,29 +154,16 @@ export default function ShopsPage() {
             )}
 
             <form onSubmit={handleCreate} className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-sm font-semibold text-stone-700 mb-1">Code Shop *</label>
-                  <input
-                    type="text"
-                    placeholder="SHOP-005"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-sky-500 outline-none"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-stone-700 mb-1">Nom Commercial *</label>
-                  <input
-                    type="text"
-                    placeholder="APS Yoff"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
-                    required
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Nom du shop *</label>
+                <input
+                  type="text"
+                  placeholder="Ex: APS Yoff"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
+                  required
+                />
               </div>
 
               <div>

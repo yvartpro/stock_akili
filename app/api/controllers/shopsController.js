@@ -3,6 +3,11 @@ import * as Models from '../models/index.js';
 
 const { Shop, ExitVoucher, ExitVoucherItem, Product } = Models;
 
+function buildShopCode(id) {
+  const prefix = (process.env.SHOP_PREFIX || 'SHOP_').trim();
+  return `${prefix}${String(id).padStart(4, '0')}`;
+}
+
 class ShopsController {
   async getShops(req, res) {
     try {
@@ -45,18 +50,21 @@ class ShopsController {
 
   async createShop(req, res) {
     try {
-      const { name, code, managerName, location, phone } = req.body;
-      if (!name || !code) {
-        return res.status(400).json({ error: 'Nom et Code du shop obligatoires.' });
+      const { name, managerName, location, phone } = req.body;
+      if (!name?.trim()) {
+        return res.status(400).json({ error: 'Nom du shop obligatoire.' });
       }
 
       const shop = await Shop.create({
-        code: code.trim().toUpperCase(),
+        code: `__pending_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
         name: name.trim(),
         managerName,
         location,
         phone
       });
+
+      shop.code = buildShopCode(shop.id);
+      await shop.save();
 
       await logAudit({
         req,

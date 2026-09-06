@@ -3,6 +3,11 @@ import { logAudit } from '../middleware/audit.js';
 
 const { Supplier, Reception, ReceptionItem, Product } = Models;
 
+function buildSupplierCode(id) {
+  const prefix = (process.env.SUPPLIER_PREFIX || 'FOUR_').trim();
+  return `${prefix}${String(id).padStart(4, '0')}`;
+}
+
 class SuppliersController {
   async getSuppliers(req, res) {
     try {
@@ -47,13 +52,13 @@ class SuppliersController {
 
   async createSupplier(req, res) {
     try {
-      const { name, code, contactName, phone, email, address, notes } = req.body;
-      if (!name || !code) {
-        return res.status(400).json({ error: 'Nom et Code fournisseur obligatoires.' });
+      const { name, contactName, phone, email, address, notes } = req.body;
+      if (!name?.trim()) {
+        return res.status(400).json({ error: 'Nom du fournisseur obligatoire.' });
       }
 
       const supplier = await Supplier.create({
-        code: code.trim().toUpperCase(),
+        code: `__pending_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
         name: name.trim(),
         contactName,
         phone,
@@ -61,6 +66,9 @@ class SuppliersController {
         address,
         notes
       });
+
+      supplier.code = buildSupplierCode(supplier.id);
+      await supplier.save();
 
       await logAudit({
         req,

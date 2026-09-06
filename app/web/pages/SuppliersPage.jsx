@@ -6,8 +6,7 @@ export default function SuppliersPage() {
   const [suppliers, setSuppliers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-  
-  const [code, setCode] = useState('');
+
   const [name, setName] = useState('');
   const [contactName, setContactName] = useState('');
   const [phone, setPhone] = useState('');
@@ -39,7 +38,6 @@ export default function SuppliersPage() {
 
     try {
       await api.createSupplier({
-        code: code.toUpperCase(),
         name,
         contactName,
         phone,
@@ -48,7 +46,6 @@ export default function SuppliersPage() {
       });
 
       setModalOpen(false);
-      setCode('');
       setName('');
       setContactName('');
       setPhone('');
@@ -154,9 +151,6 @@ export default function SuppliersPage() {
             <h3 className="text-base font-bold text-stone-900 mb-0.5">
               Enregistrer un Fournisseur Partenaire
             </h3>
-            <p className="text-sm text-stone-500 mb-3.5">
-              Ce fournisseur pourra être sélectionné lors de toute réception de marchandises
-            </p>
 
             {error && (
               <div className="mb-3 p-3 rounded-lg bg-stone-100 border border-stone-200 text-stone-700 text-sm flex items-center gap-2">
@@ -166,29 +160,16 @@ export default function SuppliersPage() {
             )}
 
             <form onSubmit={handleCreate} className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-sm font-semibold text-stone-700 mb-1">Code Fournisseur *</label>
-                  <input
-                    type="text"
-                    placeholder="FOUR-003"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 uppercase font-mono focus:border-sky-500 outline-none"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-stone-700 mb-1">Raison Sociale *</label>
-                  <input
-                    type="text"
-                    placeholder="Congo Mobile Import SARL"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
-                    required
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Nom du fournisseur *</label>
+                <input
+                  type="text"
+                  placeholder="Ex: Congo Mobile Import"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-sky-500 outline-none"
+                  required
+                />
               </div>
 
               <div>
