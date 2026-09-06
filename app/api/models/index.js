@@ -31,6 +31,7 @@ const sequelize = new Sequelize(
   }
 );
 
+// initialize models  
 User.initModel(sequelize);
 Brand.initModel(sequelize);
 PhoneModel.initModel(sequelize);
@@ -48,6 +49,7 @@ StockMovement.initModel(sequelize);
 AuditLog.initModel(sequelize);
 DamagedRecord.initModel(sequelize);
 
+// model associations
 User.associate(Reception, ExitVoucher, Inventory, StockMovement, AuditLog, DamagedRecord);
 Supplier.associate(Reception);
 Shop.associate(ExitVoucher);

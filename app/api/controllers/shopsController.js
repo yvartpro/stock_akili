@@ -1,5 +1,7 @@
-import { Shop, ExitVoucher, ExitVoucherItem, Product } from '../models.old/index.js';
 import { logAudit } from '../middleware/audit.js';
+import * as Models from '../models/index.js';
+
+const { Shop, ExitVoucher, ExitVoucherItem, Product } = Models;
 
 export async function getShops(req, res) {
   try {

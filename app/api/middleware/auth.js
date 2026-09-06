@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { User } from '../models.old/index.js';
+import User from '../models/User.js';
 
 export const JWT_SECRET = process.env.JWT_SECRET || 'aps_warehouse_jwt_secret_2026_super_secure';
 

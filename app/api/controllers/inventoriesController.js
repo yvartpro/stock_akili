@@ -1,15 +1,8 @@
-import { sequelize } from '../config.old/db.js';
-import { 
-  Inventory, 
-  InventoryItem, 
-  Product, 
-  User, 
-  Brand, 
-  PhoneModel, 
-  Color, 
-  StockMovement 
-} from '../models.old/index.js';
+import { sequelize } from '../models/index.js';
+import * as Models from '../models/index.js';
 import { logAudit } from '../middleware/audit.js';
+
+const { Inventory, InventoryItem, Product, User, Brand, PhoneModel, Color, StockMovement } = Models;
 
 export async function getInventories(req, res) {
   try {

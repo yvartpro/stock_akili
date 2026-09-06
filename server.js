@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import cors from 'cors';
 import { createServer as createViteServer } from 'vite';
 import apiRouter from './app/api/routes/index.js';
-import { initDatabase } from './app/api/config.old/db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,13 +17,6 @@ async function startServer() {
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-
-  // Initialize DB and Seed data
-  try {
-    await initDatabase();
-  } catch (dbErr) {
-    console.error('Database initialization error:', dbErr);
-  }
 
   // Mount backend API routes under /api
   app.use('/api', apiRouter);

@@ -1,6 +1,7 @@
-import { Brand, PhoneModel, Color } from '../models.old/index.js';
 import { logAudit } from '../middleware/audit.js';
+import * as Models from '../models/index.js';
 
+const { Brand, PhoneModel, Color } = Models;
 export async function getBrands(req, res) {
   try {
     const brands = await Brand.findAll({

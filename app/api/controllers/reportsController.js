@@ -1,5 +1,6 @@
-import { Product, Brand, PhoneModel, Color, Shop, ExitVoucher, ExitVoucherItem, Reception, ReceptionItem, StockMovement } from '../models.old/index.js';
+import * as Models from '../models/index.js';
 
+const { Product, Brand, PhoneModel, Color, Shop, ExitVoucher, ExitVoucherItem, Reception, ReceptionItem, StockMovement } = Models;
 export async function getDashboardStats(req, res) {
   try {
     const products = await Product.findAll({

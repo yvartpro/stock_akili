@@ -1,4 +1,5 @@
-import { AuditLog, User } from '../models.old/index.js';
+import * as Models from '../models/index.js';
+const { AuditLog, User } = Models;
 
 export async function getAuditLogs(req, res) {
   try {

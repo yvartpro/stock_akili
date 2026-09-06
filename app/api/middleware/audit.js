@@ -1,4 +1,4 @@
-import { AuditLog } from '../models.old/index.js';
+import { AuditLog } from '../models/index.js';
 
 export async function logAudit({ req, user, action, entityType, entityId, details }) {
   try {

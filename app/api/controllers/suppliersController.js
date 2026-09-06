@@ -1,5 +1,7 @@
-import { Supplier, Reception, ReceptionItem, Product } from '../models.old/index.js';
+import * as Models from '../models/index.js';
 import { logAudit } from '../middleware/audit.js';
+
+const { Supplier, Reception, ReceptionItem, Product } = Models;
 
 export async function getSuppliers(req, res) {
   try {

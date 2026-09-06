@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { User } from '../models.old/index.js';
+import { User } from '../models/index.js';
 import { JWT_SECRET } from '../middleware/auth.js';
 import { logAudit } from '../middleware/audit.js';
 

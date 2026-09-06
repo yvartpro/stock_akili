@@ -1,6 +1,8 @@
 import { Op } from 'sequelize';
-import { Product, Brand, PhoneModel, Color, StockMovement } from '../models.old/index.js';
 import { logAudit } from '../middleware/audit.js';
+import * as Models from '../models/index.js';
+
+const { Product, Brand, PhoneModel, Color, StockMovement } = Models;
 
 export async function getProducts(req, res) {
   try {

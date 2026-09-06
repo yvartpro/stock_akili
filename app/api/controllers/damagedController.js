@@ -1,5 +1,7 @@
-import { Product, Brand, PhoneModel, Color, StockMovement, DamagedRecord, User } from '../models.old/index.js';
+import * as Models from '../models/index.js';
 import { logAudit } from '../middleware/audit.js';
+
+const { Product, Brand, PhoneModel, Color, StockMovement, DamagedRecord, User } = Models;
 
 export async function getDamagedProducts(req, res) {
   try {

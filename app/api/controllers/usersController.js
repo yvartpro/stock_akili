@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { User } from '../models.old/index.js';
+import * as Models from '../models/index.js';
 import { logAudit } from '../middleware/audit.js';
 
 export async function getUsers(req, res) {
