@@ -69,11 +69,11 @@ export default function DamagedProductsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
-            <AlertOctagon className="w-5 h-5 text-rose-600" />
+          <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
+            <AlertOctagon className="w-5 h-5 text-stone-600" />
             Registre des Articles Endommagés & Pertes (Art. 11)
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-sm text-stone-500 mt-0.5">
             Aucun article n'est jamais supprimé : traçabilité complète des fêlures, casses et pertes
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function DamagedProductsPage() {
             setSelectedProduct(null);
             setModalOpen(true);
           }}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Déclarer une Casse / Perte
@@ -92,76 +92,76 @@ export default function DamagedProductsPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <div className="flex items-center justify-between text-slate-500 text-xs mb-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <div className="flex items-center justify-between text-stone-500 text-sm mb-1">
             <span>Total Articles Hors Service</span>
-            <AlertOctagon className="w-4 h-4 text-rose-600" />
+            <AlertOctagon className="w-4 h-4 text-stone-600" />
           </div>
-          <p className="text-xl font-bold font-mono text-slate-900">{totalUnits} pcs</p>
-          <span className="text-[11px] text-slate-500 mt-0.5 block">Considérés comme pertes sèches</span>
+          <p className="text-xl font-bold font-mono text-stone-900">{totalUnits} pcs</p>
+          <span className="text-sm text-stone-500 mt-0.5 block">Considérés comme pertes sèches</span>
         </div>
 
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <div className="flex items-center justify-between text-slate-500 text-xs mb-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <div className="flex items-center justify-between text-stone-500 text-sm mb-1">
             <span>Perte Financière Estimée (Coût Achat)</span>
-            <TrendingDown className="w-4 h-4 text-rose-600" />
+            <TrendingDown className="w-4 h-4 text-stone-600" />
           </div>
-          <p className="text-xl font-bold font-mono text-rose-700">{Math.round(totalFinancialLoss).toLocaleString('fr-FR')} FC</p>
-          <span className="text-[11px] text-slate-500 mt-0.5 block">Basé sur le prix d'achat unitaire usine</span>
+          <p className="text-xl font-bold font-mono text-stone-700">{Math.round(totalFinancialLoss).toLocaleString('fr-FR')} FC</p>
+          <span className="text-sm text-stone-500 mt-0.5 block">Basé sur le prix d'achat unitaire usine</span>
         </div>
 
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <div className="flex items-center justify-between text-slate-500 text-xs mb-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <div className="flex items-center justify-between text-stone-500 text-sm mb-1">
             <span>Règle d'Immutabilité du Stock</span>
-            <ShieldAlert className="w-4 h-4 text-blue-600" />
+            <ShieldAlert className="w-4 h-4 text-stone-600" />
           </div>
-          <p className="text-xs font-semibold text-slate-900 mt-1">Zéro suppression autorisée</p>
-          <span className="text-[11px] text-slate-500 mt-0.5 block">Historique conservé pour audit commissaire</span>
+          <p className="text-sm font-semibold text-stone-900 mt-1">Zéro suppression autorisée</p>
+          <span className="text-sm text-stone-500 mt-0.5 block">Historique conservé pour audit commissaire</span>
         </div>
       </div>
 
       {/* Filters Toolbar */}
-      <div className="p-3.5 rounded-md bg-white border border-slate-200 shadow-xs flex flex-wrap items-center gap-3">
+      <div className="p-3.5 rounded-lg bg-white border border-stone-200 shadow-sm flex flex-wrap items-center gap-3">
         <div className="relative flex-1 min-w-[240px]">
-          <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -transtone-y-1/2" />
           <input
             type="text"
             placeholder="Rechercher par référence, produit, motif..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 placeholder:text-slate-400 focus:border-rose-500 outline-none"
+            className="w-full pl-8 pr-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 placeholder:text-stone-400 focus:border-stone-500 outline-none"
           />
         </div>
 
         <div className="flex items-center gap-1.5">
           <button
             onClick={() => setStatusFilter('all')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              statusFilter === 'all' ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              statusFilter === 'all' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Tous ({damagedRecords.length})
           </button>
           <button
             onClick={() => setStatusFilter('endommage')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              statusFilter === 'endommage' ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              statusFilter === 'endommage' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Endommagé
           </button>
           <button
             onClick={() => setStatusFilter('perdu')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              statusFilter === 'perdu' ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              statusFilter === 'perdu' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Perdu
           </button>
           <button
             onClick={() => setStatusFilter('hors_service')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-              statusFilter === 'hors_service' ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              statusFilter === 'hors_service' ? 'bg-stone-600 text-white' : 'bg-stone-100 text-stone-600 hover:text-stone-900'
             }`}
           >
             Hors Service
@@ -170,11 +170,11 @@ export default function DamagedProductsPage() {
       </div>
 
       {/* Table */}
-      <div className="rounded-md bg-white border border-slate-200 overflow-hidden shadow-xs">
+      <div className="rounded-lg bg-white border border-stone-200 overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[10px]">
+              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">Date Déclaration</th>
                 <th className="p-3.5">SKU & Produit</th>
                 <th className="p-3.5">Statut Spécifique</th>
@@ -183,41 +183,41 @@ export default function DamagedProductsPage() {
                 <th className="p-3.5">Opérateur</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-stone-100">
               {loading ? (
                 <tr>
-                  <td colSpan={6} className="p-8 text-center text-slate-500">
+                  <td colSpan={6} className="p-8 text-center text-stone-500">
                     Chargement du registre...
                   </td>
                 </tr>
               ) : filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="p-10 text-center text-slate-500">
+                  <td colSpan={6} className="p-10 text-center text-stone-500">
                     Aucun article endommagé ou déclassé enregistré.
                   </td>
                 </tr>
               ) : (
                 filtered.map((item) => (
-                  <tr key={item.id} className="hover:bg-slate-50 transition-colors">
-                    <td className="p-3.5 text-slate-500 whitespace-nowrap text-[11px]">
+                  <tr key={item.id} className="hover:bg-stone-50 transition-colors">
+                    <td className="p-3.5 text-stone-500 whitespace-nowrap text-sm">
                       {new Date(item.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     </td>
                     <td className="p-3.5">
-                      <span className="font-mono text-slate-800 font-bold block text-[11px]">{item.product?.sku}</span>
-                      <span className="text-slate-900 font-medium">{item.product?.name}</span>
+                      <span className="font-mono text-stone-800 font-bold block text-sm">{item.product?.sku}</span>
+                      <span className="text-stone-900 font-medium">{item.product?.name}</span>
                     </td>
                     <td className="p-3.5">
-                      <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 border border-rose-200">
+                      <span className="inline-block px-2 py-0.5 rounded text-sm font-bold uppercase tracking-wider bg-stone-100 text-stone-700 border border-stone-200">
                         {item.status.replace('_', ' ')}
                       </span>
                     </td>
-                    <td className="p-3.5 text-center font-mono font-bold text-rose-700 text-xs">
+                    <td className="p-3.5 text-center font-mono font-bold text-stone-700 text-sm">
                       {item.quantity} pcs
                     </td>
-                    <td className="p-3.5 text-slate-700 max-w-sm">
+                    <td className="p-3.5 text-stone-700 max-w-sm">
                       <p className="italic">"{item.reason}"</p>
                     </td>
-                    <td className="p-3.5 text-slate-500 text-[11px]">
+                    <td className="p-3.5 text-stone-500 text-sm">
                       {item.user?.name || 'Gestionnaire'}
                     </td>
                   </tr>

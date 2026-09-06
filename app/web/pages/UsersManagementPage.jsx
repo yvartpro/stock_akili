@@ -72,18 +72,18 @@ export default function UsersManagementPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
-            <Users className="w-5 h-5 text-blue-600" />
+          <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
+            <Users className="w-5 h-5 text-stone-600" />
             Gestion des Utilisateurs & Rôles de Sécurité
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-sm text-stone-500 mt-0.5">
             Contrôle d'accès basé sur les rôles (RBAC) : Administrateur système et Gestionnaires du stock principal
           </p>
         </div>
 
         <button
           onClick={() => setModalOpen(true)}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-stone-600 hover:bg-stone-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           Nouvel Utilisateur
@@ -91,11 +91,11 @@ export default function UsersManagementPage() {
       </div>
 
       {/* Users Table */}
-      <div className="rounded-md bg-white border border-slate-200 overflow-hidden shadow-xs">
+      <div className="rounded-lg bg-white border border-stone-200 overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-sm">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[10px]">
+              <tr className="bg-stone-50 border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-sm">
                 <th className="p-3.5">Nom Complet</th>
                 <th className="p-3.5">Email de Connexion</th>
                 <th className="p-3.5">Rôle Système</th>
@@ -104,47 +104,47 @@ export default function UsersManagementPage() {
                 <th className="p-3.5 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-stone-100">
               {loading ? (
                 <tr>
-                  <td colSpan={6} className="p-8 text-center text-slate-500">
+                  <td colSpan={6} className="p-8 text-center text-stone-500">
                     Chargement des utilisateurs...
                   </td>
                 </tr>
               ) : (
                 users.map((u) => (
-                  <tr key={u.id} className="hover:bg-slate-50 transition-colors">
+                  <tr key={u.id} className="hover:bg-stone-50 transition-colors">
                     <td className="p-3.5">
-                      <p className="font-semibold text-slate-900">{u.name}</p>
+                      <p className="font-semibold text-stone-900">{u.name}</p>
                     </td>
-                    <td className="p-3.5 font-mono text-slate-700">
+                    <td className="p-3.5 font-mono text-stone-700">
                       {u.email}
                     </td>
                     <td className="p-3.5">
-                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-sm font-bold uppercase tracking-wider ${
                         u.role === 'admin' 
-                          ? 'bg-purple-50 text-purple-700 border border-purple-200' 
-                          : 'bg-blue-50 text-blue-700 border border-blue-200'
+                          ? 'bg-stone-100 text-stone-700 border border-stone-200' 
+                          : 'bg-stone-100 text-stone-700 border border-stone-200'
                       }`}>
                         {u.role === 'admin' ? 'Administrateur' : 'Gestionnaire Stock'}
                       </span>
                     </td>
                     <td className="p-3.5 text-center">
-                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-sm font-bold uppercase tracking-wider ${
                         u.isActive 
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' 
-                          : 'bg-rose-50 text-rose-700 border border-rose-200'
+                          ? 'bg-stone-100 text-stone-700 border border-stone-200' 
+                          : 'bg-stone-100 text-stone-700 border border-stone-200'
                       }`}>
                         {u.isActive ? 'Actif' : 'Désactivé'}
                       </span>
                     </td>
-                    <td className="p-3.5 text-slate-500 text-[11px]">
+                    <td className="p-3.5 text-stone-500 text-sm">
                       {new Date(u.createdAt).toLocaleDateString('fr-FR')}
                     </td>
                     <td className="p-3.5 text-right">
                       <button
                         onClick={() => handleToggleStatus(u)}
-                        className="px-2.5 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[11px] font-semibold rounded-md transition-colors cursor-pointer"
+                        className="px-2.5 py-1 bg-white hover:bg-stone-100 text-stone-700 border border-stone-200 text-sm font-semibold rounded-lg transition-colors cursor-pointer"
                       >
                         {u.isActive ? 'Désactiver' : 'Activer'}
                       </button>
@@ -159,65 +159,65 @@ export default function UsersManagementPage() {
 
       {/* New User Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs">
-          <div className="w-full max-w-md bg-white border border-slate-200 rounded-md p-5 shadow-xl">
-            <h3 className="text-base font-bold text-slate-900 mb-0.5">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs">
+          <div className="w-full max-w-md bg-white border border-stone-200 rounded-lg p-5 shadow-xl">
+            <h3 className="text-base font-bold text-stone-900 mb-0.5">
               Créer un Utilisateur
             </h3>
-            <p className="text-xs text-slate-500 mb-3.5">
+            <p className="text-sm text-stone-500 mb-3.5">
               Attribuez un compte et définissez le périmètre de sécurité
             </p>
 
             {error && (
-              <div className="mb-3 p-3 rounded-md bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+              <div className="mb-3 p-3 rounded-lg bg-stone-100 border border-stone-200 text-stone-700 text-sm flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0 text-stone-600" />
                 <span>{error}</span>
               </div>
             )}
 
             <form onSubmit={handleCreate} className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Nom Complet *</label>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Nom Complet *</label>
                 <input
                   type="text"
                   placeholder="Jean Dupont"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 focus:border-blue-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Email Professionnel *</label>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Email Professionnel *</label>
                 <input
                   type="email"
                   placeholder="j.dupont@aps.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 focus:border-blue-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Mot de Passe Initial *</label>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Mot de Passe Initial *</label>
                 <input
                   type="password"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 focus:border-blue-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Rôle Système *</label>
+                <label className="block text-sm font-semibold text-stone-700 mb-1">Rôle Système *</label>
                 <select
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
-                  className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 focus:border-blue-600 outline-none"
+                  className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-600 outline-none"
                   required
                 >
                   <option value="gestionnaire">Gestionnaire de Stock Principal (Stock, Bons, Réceptions)</option>
@@ -225,18 +225,18 @@ export default function UsersManagementPage() {
                 </select>
               </div>
 
-              <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-200">
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-stone-200">
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-3.5 py-1.5 text-xs text-slate-600 hover:text-slate-900"
+                  className="px-3.5 py-1.5 text-sm text-stone-600 hover:text-stone-900"
                 >
                   Annuler
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-xs font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+                  className="px-3.5 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {submitting ? 'Création...' : 'Créer l\'utilisateur'}
                 </button>

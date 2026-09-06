@@ -74,7 +74,7 @@ export default function ReportsPage() {
   if (loading && !stockValuation) {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
-        <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-stone-600 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -87,11 +87,11 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-blue-600" />
+          <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-stone-600" />
             Rapports Analytiques & Grand Livre des Mouvements
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-sm text-stone-500 mt-0.5">
             Valorisation financière, propositions d'achat et traçabilité comptable du stock central
           </p>
         </div>
@@ -99,9 +99,9 @@ export default function ReportsPage() {
         <div className="flex items-center gap-2.5">
           <button
             onClick={handleExportCSV}
-            className="flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-md border border-slate-200 shadow-xs transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-stone-50 text-stone-700 text-sm font-semibold rounded-lg border border-stone-200 shadow-sm transition-colors cursor-pointer"
           >
-            <Download className="w-4 h-4 text-blue-600" />
+            <Download className="w-4 h-4 text-stone-600" />
             Exporter CSV Mouvements
           </button>
         </div>
@@ -109,32 +109,32 @@ export default function ReportsPage() {
 
       {/* Stock Valuation Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <span className="text-xs text-slate-500 font-medium">Valeur Marchande Totale (Cession)</span>
-          <p className="text-2xl font-bold font-mono text-slate-900 mt-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <span className="text-sm text-stone-500 font-medium">Valeur Marchande Totale (Cession)</span>
+          <p className="text-2xl font-bold font-mono text-stone-900 mt-1">
             {totals.totalWholesaleValue ? Math.round(totals.totalWholesaleValue).toLocaleString('fr-FR') : '0'} FC
           </p>
-          <p className="text-[11px] text-slate-500 mt-1">
+          <p className="text-sm text-stone-500 mt-1">
             Sur la base des prix de gros fixés aux points de vente
           </p>
         </div>
 
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <span className="text-xs text-slate-500 font-medium">Coût Total d'Acquisition (Achat)</span>
-          <p className="text-2xl font-bold font-mono text-slate-900 mt-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <span className="text-sm text-stone-500 font-medium">Coût Total d'Acquisition (Achat)</span>
+          <p className="text-2xl font-bold font-mono text-stone-900 mt-1">
             {totals.totalCostValue ? Math.round(totals.totalCostValue).toLocaleString('fr-FR') : '0'} FC
           </p>
-          <p className="text-[11px] text-slate-500 mt-1">
+          <p className="text-sm text-stone-500 mt-1">
             Capital immobilisé dans le magasin central
           </p>
         </div>
 
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
-          <span className="text-xs text-slate-500 font-medium">Marge Brute Théorique de Cession</span>
-          <p className="text-2xl font-bold font-mono text-emerald-700 mt-1">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
+          <span className="text-sm text-stone-500 font-medium">Marge Brute Théorique de Cession</span>
+          <p className="text-2xl font-bold font-mono text-stone-700 mt-1">
             {totals.potentialMargin ? Math.round(totals.potentialMargin).toLocaleString('fr-FR') : '0'} FC
           </p>
-          <p className="text-[11px] text-slate-500 mt-1">
+          <p className="text-sm text-stone-500 mt-1">
             Plus-value brute logistique ({totals.totalUnits || 0} pièces)
           </p>
         </div>
@@ -143,78 +143,78 @@ export default function ReportsPage() {
       {/* Categories Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Pochettes */}
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Smartphone className="w-4 h-4 text-blue-600" />
-              <h3 className="font-bold text-sm text-slate-900">Segment Pochettes de Téléphones</h3>
+              <Smartphone className="w-4 h-4 text-stone-600" />
+              <h3 className="font-bold text-sm text-stone-900">Segment Pochettes de Téléphones</h3>
             </div>
-            <span className="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+            <span className="text-sm font-mono font-bold text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
               {byCategory.pochette?.units || 0} pièces
             </span>
           </div>
-          <div className="space-y-1.5 text-xs text-slate-600">
-            <div className="flex justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">Références gérées :</span>
-              <span className="font-mono font-semibold text-slate-800">{byCategory.pochette?.count || 0} modèles</span>
+          <div className="space-y-1.5 text-sm text-stone-600">
+            <div className="flex justify-between py-1 border-b border-stone-100">
+              <span className="text-stone-500">Références gérées :</span>
+              <span className="font-mono font-semibold text-stone-800">{byCategory.pochette?.count || 0} modèles</span>
             </div>
-            <div className="flex justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">Coût d'achat global :</span>
-              <span className="font-mono text-slate-800">{byCategory.pochette?.costValue ? Math.round(byCategory.pochette.costValue).toLocaleString('fr-FR') : '0'} FC</span>
+            <div className="flex justify-between py-1 border-b border-stone-100">
+              <span className="text-stone-500">Coût d'achat global :</span>
+              <span className="font-mono text-stone-800">{byCategory.pochette?.costValue ? Math.round(byCategory.pochette.costValue).toLocaleString('fr-FR') : '0'} FC</span>
             </div>
             <div className="flex justify-between py-1">
-              <span className="text-slate-500">Valeur marchande :</span>
-              <span className="font-mono font-bold text-slate-900">{byCategory.pochette?.wholesaleValue ? Math.round(byCategory.pochette.wholesaleValue).toLocaleString('fr-FR') : '0'} FC</span>
+              <span className="text-stone-500">Valeur marchande :</span>
+              <span className="font-mono font-bold text-stone-900">{byCategory.pochette?.wholesaleValue ? Math.round(byCategory.pochette.wholesaleValue).toLocaleString('fr-FR') : '0'} FC</span>
             </div>
           </div>
         </div>
 
         {/* Protections */}
-        <div className="p-4 rounded-md bg-white border border-slate-200 shadow-xs">
+        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-purple-600" />
-              <h3 className="font-bold text-sm text-slate-900">Segment Protections Anti-Casse</h3>
+              <Shield className="w-4 h-4 text-stone-600" />
+              <h3 className="font-bold text-sm text-stone-900">Segment Protections Anti-Casse</h3>
             </div>
-            <span className="text-xs font-mono font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+            <span className="text-sm font-mono font-bold text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
               {byCategory.protection?.units || 0} pièces
             </span>
           </div>
-          <div className="space-y-1.5 text-xs text-slate-600">
-            <div className="flex justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">Références gérées :</span>
-              <span className="font-mono font-semibold text-slate-800">{byCategory.protection?.count || 0} modèles</span>
+          <div className="space-y-1.5 text-sm text-stone-600">
+            <div className="flex justify-between py-1 border-b border-stone-100">
+              <span className="text-stone-500">Références gérées :</span>
+              <span className="font-mono font-semibold text-stone-800">{byCategory.protection?.count || 0} modèles</span>
             </div>
-            <div className="flex justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">Coût d'achat global :</span>
-              <span className="font-mono text-slate-800">{byCategory.protection?.costValue ? Math.round(byCategory.protection.costValue).toLocaleString('fr-FR') : '0'} FC</span>
+            <div className="flex justify-between py-1 border-b border-stone-100">
+              <span className="text-stone-500">Coût d'achat global :</span>
+              <span className="font-mono text-stone-800">{byCategory.protection?.costValue ? Math.round(byCategory.protection.costValue).toLocaleString('fr-FR') : '0'} FC</span>
             </div>
             <div className="flex justify-between py-1">
-              <span className="text-slate-500">Valeur marchande :</span>
-              <span className="font-mono font-bold text-slate-900">{byCategory.protection?.wholesaleValue ? Math.round(byCategory.protection.wholesaleValue).toLocaleString('fr-FR') : '0'} FC</span>
+              <span className="text-stone-500">Valeur marchande :</span>
+              <span className="font-mono font-bold text-stone-900">{byCategory.protection?.wholesaleValue ? Math.round(byCategory.protection.wholesaleValue).toLocaleString('fr-FR') : '0'} FC</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Replenishment Suggestions Table */}
-      <div className="rounded-md bg-white border border-slate-200 p-4 shadow-xs">
+      <div className="rounded-lg bg-white border border-stone-200 p-4 shadow-sm">
         <div className="flex items-center gap-2 mb-3">
-          <AlertTriangle className="w-4 h-4 text-amber-600" />
+          <AlertTriangle className="w-4 h-4 text-stone-600" />
           <div>
-            <h3 className="font-bold text-sm text-slate-900">
+            <h3 className="font-bold text-sm text-stone-900">
               Suggestions d'Approvisionnement Urgent (Articles sous seuil)
             </h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-sm text-stone-500">
               Calcul automatique de la commande recommandée pour reconstituer le stock de sécurité
             </p>
           </div>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-slate-600 font-semibold uppercase text-[10px]">
+              <tr className="border-b border-stone-200 bg-stone-50 text-stone-600 font-semibold uppercase text-sm">
                 <th className="p-2.5">SKU</th>
                 <th className="p-2.5">Produit</th>
                 <th className="p-2.5 text-center">Stock Actuel</th>
@@ -224,27 +224,27 @@ export default function ReportsPage() {
                 <th className="p-2.5 text-right">Budget Estimé</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-stone-100">
               {replenishmentList.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-6 text-center text-slate-500">
+                  <td colSpan={7} className="py-6 text-center text-stone-500">
                     Aucun produit ne requiert de réapprovisionnement d'urgence.
                   </td>
                 </tr>
               ) : (
                 replenishmentList.map(item => (
-                  <tr key={item.id} className="hover:bg-slate-50">
-                    <td className="p-2.5 font-mono font-semibold text-blue-700">{item.sku}</td>
-                    <td className="p-2.5 font-medium text-slate-900">{item.name}</td>
-                    <td className="p-2.5 text-center font-mono font-bold text-rose-600">{item.currentStock} pcs</td>
-                    <td className="p-2.5 text-center font-mono text-slate-500">{item.minStockThreshold} pcs</td>
-                    <td className="p-2.5 text-center font-mono font-bold text-amber-700">-{item.deficit} pcs</td>
+                  <tr key={item.id} className="hover:bg-stone-50">
+                    <td className="p-2.5 font-mono font-semibold text-stone-700">{item.sku}</td>
+                    <td className="p-2.5 font-medium text-stone-900">{item.name}</td>
+                    <td className="p-2.5 text-center font-mono font-bold text-stone-600">{item.currentStock} pcs</td>
+                    <td className="p-2.5 text-center font-mono text-stone-500">{item.minStockThreshold} pcs</td>
+                    <td className="p-2.5 text-center font-mono font-bold text-stone-700">-{item.deficit} pcs</td>
                     <td className="p-2.5 text-center">
-                      <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono font-bold border border-emerald-200">
+                      <span className="px-2 py-0.5 rounded bg-stone-100 text-stone-700 font-mono font-bold border border-stone-200">
                         +{item.recommendedOrder} pcs
                       </span>
                     </td>
-                    <td className="p-2.5 text-right font-mono font-bold text-slate-900">
+                    <td className="p-2.5 text-right font-mono font-bold text-stone-900">
                       {item.estimatedBudget ? Math.round(item.estimatedBudget).toLocaleString('fr-FR') : '0'} FC
                     </td>
                   </tr>
@@ -256,13 +256,13 @@ export default function ReportsPage() {
       </div>
 
       {/* Movements Ledger */}
-      <div className="rounded-md bg-white border border-slate-200 p-4 shadow-xs">
+      <div className="rounded-lg bg-white border border-stone-200 p-4 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-blue-600" />
+            <Clock className="w-4 h-4 text-stone-600" />
             <div>
-              <h3 className="font-bold text-sm text-slate-900">Grand Livre des Mouvements de Stock</h3>
-              <p className="text-xs text-slate-500">Journal chronologique inaltérable de tous les flux physiques</p>
+              <h3 className="font-bold text-sm text-stone-900">Grand Livre des Mouvements de Stock</h3>
+              <p className="text-sm text-stone-500">Journal chronologique inaltérable de tous les flux physiques</p>
             </div>
           </div>
 
@@ -270,7 +270,7 @@ export default function ReportsPage() {
             <select
               value={movementTypeFilter}
               onChange={(e) => setMovementTypeFilter(e.target.value)}
-              className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-700 focus:border-blue-600 outline-none"
+              className="px-2.5 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-700 focus:border-stone-600 outline-none"
             >
               <option value="">Tous les types</option>
               <option value="ENTREE_RECEPTION">Entrées (Réceptions Fournisseur)</option>
@@ -282,9 +282,9 @@ export default function ReportsPage() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-slate-600 font-semibold uppercase text-[10px]">
+              <tr className="border-b border-stone-200 bg-stone-50 text-stone-600 font-semibold uppercase text-sm">
                 <th className="p-2.5">Date & Heure</th>
                 <th className="p-2.5">Type</th>
                 <th className="p-2.5">Document Réf.</th>
@@ -294,28 +294,28 @@ export default function ReportsPage() {
                 <th className="p-2.5">Justification / Motif</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-stone-100">
               {movements.slice(0, 20).map(m => {
                 const isPos = m.quantityChange > 0;
                 return (
-                  <tr key={m.id} className="hover:bg-slate-50">
-                    <td className="p-2.5 text-slate-500 text-[11px] whitespace-nowrap">
+                  <tr key={m.id} className="hover:bg-stone-50">
+                    <td className="p-2.5 text-stone-500 text-sm whitespace-nowrap">
                       {new Date(m.createdAt).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}
                     </td>
                     <td className="p-2.5">
-                      <span className="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
+                      <span className="text-sm font-mono font-semibold px-1.5 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200">
                         {m.type}
                       </span>
                     </td>
-                    <td className="p-2.5 font-mono text-blue-700 font-semibold">{m.reference}</td>
-                    <td className="p-2.5 font-medium text-slate-900">{m.product?.name}</td>
+                    <td className="p-2.5 font-mono text-stone-700 font-semibold">{m.reference}</td>
+                    <td className="p-2.5 font-medium text-stone-900">{m.product?.name}</td>
                     <td className="p-2.5 text-center font-mono font-bold">
-                      <span className={isPos ? 'text-emerald-700' : 'text-rose-600'}>
+                      <span className={isPos ? 'text-stone-700' : 'text-stone-600'}>
                         {isPos ? `+${m.quantityChange}` : m.quantityChange}
                       </span>
                     </td>
-                    <td className="p-2.5 text-center font-mono font-bold text-slate-900">{m.newStock}</td>
-                    <td className="p-2.5 text-slate-500 text-[11px] max-w-xs truncate">{m.reason || '-'}</td>
+                    <td className="p-2.5 text-center font-mono font-bold text-stone-900">{m.newStock}</td>
+                    <td className="p-2.5 text-stone-500 text-sm max-w-xs truncate">{m.reason || '-'}</td>
                   </tr>
                 );
               })}

@@ -23,8 +23,8 @@ function ProtectedRoute({ children, adminOnly = false }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+      <div className="min-h-screen bg-stone-50 flex items-center justify-center">
+        <div className="w-10 h-10 border-2 border-stone-400 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }

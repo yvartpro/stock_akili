@@ -94,34 +94,34 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs overflow-y-auto">
-      <div className={`relative w-full max-w-xl bg-white border border-slate-200 rounded-xl shadow-2xl overflow-hidden my-6 flex flex-col transition-all duration-200 ${
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs overflow-y-auto">
+      <div className={`relative w-full max-w-xl bg-white border border-stone-200 rounded-xl shadow-2xl overflow-hidden my-6 flex flex-col transition-all duration-200 ${
         searchOpened ? 'min-h-[620px]' : 'min-h-[480px]'
       }`}>
-        <div className="flex items-center justify-between px-6 py-3.5 border-b border-slate-200 bg-slate-50 shrink-0">
-          <div className="flex items-center gap-2 text-rose-600">
+        <div className="flex items-center justify-between px-6 py-3.5 border-b border-stone-200 bg-stone-50 shrink-0">
+          <div className="flex items-center gap-2 text-stone-600">
             <AlertOctagon className="w-5 h-5" />
-            <h3 className="font-bold text-base text-slate-900">Déclarer une Casse / Perte</h3>
+            <h3 className="font-bold text-base text-stone-900">Déclarer une Casse / Perte</h3>
           </div>
           <button 
             type="button"
             onClick={onClose} 
-            className="p-1 text-slate-400 hover:text-slate-700 rounded hover:bg-slate-100 transition-colors cursor-pointer"
+            className="p-1 text-stone-400 hover:text-stone-700 rounded hover:bg-stone-100 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-3.5 bg-rose-50 border-b border-rose-100 text-xs text-rose-800 shrink-0">
+        <div className="p-3.5 bg-stone-100 border-b border-stone-100 text-sm text-stone-800 shrink-0">
           <p className="font-semibold mb-0.5">Règle de gestion (Cahier des charges Art. 11) :</p>
-          <p className="text-rose-700">
+          <p className="text-stone-700">
             Les articles déclarés cassés, fêlés ou égarés ne sont <strong>jamais supprimés</strong>. Ils sont décomptés du stock disponible et conservés au registre d'audit.
           </p>
         </div>
 
         {error && (
-          <div className="m-5 mb-0 p-3 rounded-md bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2 shrink-0">
-            <AlertTriangle className="w-4 h-4 shrink-0 text-rose-600" />
+          <div className="m-5 mb-0 p-3 rounded-lg bg-stone-100 border border-stone-200 text-stone-700 text-sm flex items-center gap-2 shrink-0">
+            <AlertTriangle className="w-4 h-4 shrink-0 text-stone-600" />
             <span>{error}</span>
           </div>
         )}
@@ -131,12 +131,12 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
             {/* If no preselected product, allow searching and selecting */}
             {!product ? (
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-sm font-semibold text-stone-700 mb-1">
                   Sélectionner l'article concerné *
                 </label>
                 {loadingProducts ? (
-                  <div className="flex items-center gap-2 py-3 text-xs text-slate-500 justify-center">
-                    <Loader2 className="w-4 h-4 animate-spin text-rose-600" />
+                  <div className="flex items-center gap-2 py-3 text-sm text-stone-500 justify-center">
+                    <Loader2 className="w-4 h-4 animate-spin text-stone-600" />
                     <span>Chargement des articles du stock...</span>
                   </div>
                 ) : (
@@ -157,30 +157,30 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
             ) : null}
 
             {currentActiveProduct && (
-              <div className={`p-3 rounded-md border text-xs ${
+              <div className={`p-3 rounded-lg border text-sm ${
                 isOutOfStock 
-                  ? 'bg-rose-50/70 border-rose-200' 
-                  : 'bg-slate-50 border-slate-200'
+                  ? 'bg-stone-100/70 border-stone-200' 
+                  : 'bg-stone-50 border-stone-200'
               }`}>
                 <div className="flex justify-between items-start gap-2">
                   <div>
-                    <span className="text-slate-500">Article sélectionné : </span>
-                    <span className="font-bold text-slate-900 block mt-0.5">{currentActiveProduct.name}</span>
+                    <span className="text-stone-500">Article sélectionné : </span>
+                    <span className="font-bold text-stone-900 block mt-0.5">{currentActiveProduct.name}</span>
                   </div>
-                  <span className={`px-2 py-0.5 rounded font-mono font-bold text-[11px] ${
+                  <span className={`px-2 py-0.5 rounded font-mono font-bold text-sm ${
                     isOutOfStock
-                      ? 'bg-rose-100 text-rose-800 border border-rose-300'
-                      : 'bg-slate-100 text-slate-800'
+                      ? 'bg-stone-100 text-stone-800 border border-stone-300'
+                      : 'bg-stone-100 text-stone-800'
                   }`}>
                     Stock: {currentActiveProduct.currentStock} unités
                   </span>
                 </div>
-                <div className="flex justify-between mt-2 pt-2 border-t border-slate-200 text-[11px] text-slate-500">
-                  <span>SKU: <code className="font-bold text-blue-700">{currentActiveProduct.sku}</code></span>
+                <div className="flex justify-between mt-2 pt-2 border-t border-stone-200 text-sm text-stone-500">
+                  <span>SKU: <code className="font-bold text-stone-700">{currentActiveProduct.sku}</code></span>
                   {currentActiveProduct.phoneModel?.name && <span>Modèle: {currentActiveProduct.phoneModel.name}</span>}
                 </div>
                 {isOutOfStock && (
-                  <p className="mt-2 text-rose-700 font-semibold text-[11px]">
+                  <p className="mt-2 text-stone-700 font-semibold text-sm">
                     ⚠️ Attention : le stock actuel de cet article est de 0 unité. Veuillez sélectionner un article en stock disponible.
                   </p>
                 )}
@@ -188,11 +188,11 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
             )}
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Nature de l'anomalie *</label>
+              <label className="block text-sm font-semibold text-stone-700 mb-1">Nature de l'anomalie *</label>
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-800 focus:border-rose-500 outline-none"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-800 focus:border-stone-500 outline-none"
                 required
               >
                 <option value="endommage">Endommagé (Casse, verre trempé fêlé, choc)</option>
@@ -202,7 +202,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-stone-700 mb-1">
                 Quantité affectée * {currentActiveProduct ? `(Max disponible: ${currentActiveProduct.currentStock})` : ''}
               </label>
               <input
@@ -212,13 +212,13 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
                 disabled={isOutOfStock}
-                className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 font-mono focus:border-rose-500 outline-none disabled:bg-slate-100 disabled:text-slate-400"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 font-mono focus:border-stone-500 outline-none disabled:bg-stone-100 disabled:text-stone-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-stone-700 mb-1">
                 Motif circonstancié / Justification obligatoire *
               </label>
               <textarea
@@ -226,24 +226,24 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Ex: 5 verres trempés fissurés suite au déchargement du carton au stock central..."
-                className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-md text-xs text-slate-900 focus:border-rose-500 outline-none placeholder:text-slate-400"
+                className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-sm text-stone-900 focus:border-stone-500 outline-none placeholder:text-stone-400"
                 required
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-200 mt-4">
+          <div className="flex items-center justify-end gap-2 pt-3 border-t border-stone-200 mt-4">
             <button
               type="button"
               onClick={onClose}
-              className="px-3.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-800 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 text-sm font-medium text-stone-600 hover:text-stone-800 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer"
             >
               Annuler
             </button>
             <button
               type="submit"
               disabled={loading || !currentActiveProduct || isOutOfStock}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-rose-600 hover:bg-rose-700 disabled:opacity-50 text-white text-xs font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-stone-600 hover:bg-stone-700 disabled:opacity-50 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               {loading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
               <span>{loading ? 'Enregistrement en cours...' : 'Valider l\'anomalie'}</span>
