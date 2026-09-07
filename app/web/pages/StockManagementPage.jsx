@@ -127,7 +127,7 @@ export default function StockManagementPage() {
             className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
           >
             <Plus className="w-4 h-4" />
-            Ajouter Référence
+            Nouveau Produit
           </button>
         </div>
       </div>
@@ -213,11 +213,11 @@ export default function StockManagementPage() {
                 <th className="p-3.5">SKU / Code Unique</th>
                 <th className="p-3.5">Désignation & Catégorie</th>
                 <th className="p-3.5">Marque & Modèle</th>
-                <th className="p-3.5">Couleur / Spécificité</th>
+                <th className="p-3.5">Couleur</th>
                 <th className="p-3.5 text-center">Niveau de Stock</th>
                 <th className="p-3.5 text-center">Seuil Min</th>
                 <th className="p-3.5 text-right">Prix Cession</th>
-                <th className="p-3.5 text-center">Statut (Art. 11)</th>
+                <th className="p-3.5 text-center">Statut</th>
                 <th className="p-3.5 text-right">Actions</th>
               </tr>
             </thead>
@@ -364,7 +364,7 @@ export default function StockManagementPage() {
                               setSelectedProductForDamaged(product);
                               setDamagedModalOpen(true);
                             }}
-                            title="Déclarer casse / anomalie (Art. 11)"
+                            title="Déclarer casse / anomalie"
                             className="p-1.5 rounded bg-stone-100 hover:bg-stone-100 text-stone-700 border border-stone-200 transition-colors cursor-pointer"
                           >
                             <AlertOctagon className="w-3.5 h-3.5" />

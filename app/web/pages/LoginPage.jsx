@@ -98,33 +98,6 @@ export default function LoginPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
-
-          <div className="mt-8 pt-6 border-t border-stone-200">
-            <p className="text-sm font-medium text-stone-500 text-center mb-4">
-              Comptes démonstration
-            </p>
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('admin')}
-                className="p-4 rounded-lg bg-sky-50 hover:bg-sky-100 border border-sky-200 text-left transition-colors cursor-pointer"
-              >
-                <span className="badge mb-2">Admin</span>
-                <p className="text-sm font-semibold text-stone-900">Christian Kabamba</p>
-                <p className="text-sm text-stone-500 mt-0.5">Droits système</p>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('gestionnaire')}
-                className="p-4 rounded-lg bg-sky-50 hover:bg-sky-100 border border-sky-200 text-left transition-colors cursor-pointer"
-              >
-                <span className="badge mb-2">Gestionnaire</span>
-                <p className="text-sm font-semibold text-stone-900">Grace Tshilombo</p>
-                <p className="text-sm text-stone-500 mt-0.5">Stock & logistique</p>
-              </button>
-            </div>
-          </div>
         </div>
 
         <p className="text-center text-sm text-stone-400 mt-6">

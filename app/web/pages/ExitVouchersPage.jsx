@@ -157,7 +157,7 @@ export default function ExitVouchersPage() {
           className="flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus className="w-4 h-4" />
-          Nouveau Bon de Sortie
+          Bon de Sortie
         </button>
       </div>
 

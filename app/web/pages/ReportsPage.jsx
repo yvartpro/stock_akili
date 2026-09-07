@@ -89,7 +89,7 @@ export default function ReportsPage() {
         <div>
           <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-stone-600" />
-            Rapports Analytiques & Grand Livre des Mouvements
+            Rapports Analytiques
           </h2>
         </div>
 

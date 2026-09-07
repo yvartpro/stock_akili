@@ -93,7 +93,7 @@ export default function DashboardPage() {
         <div className="flex flex-wrap gap-3">
           <Link to="/sorties?new=true" className="btn-primary">
             <ArrowUpFromLine className="w-4 h-4" />
-            Nouveau bon de sortie
+            Bon de sortie
           </Link>
           <Link to="/receptions?new=true" className="btn-secondary">
             <ArrowDownToLine className="w-4 h-4" />

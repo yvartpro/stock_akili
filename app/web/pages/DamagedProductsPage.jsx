@@ -71,7 +71,7 @@ export default function DamagedProductsPage() {
         <div>
           <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
             <AlertOctagon className="w-5 h-5 text-stone-600" />
-            Registre des Articles Endommagés & Pertes (Art. 11)
+            Articles Endommagés & Pertes
           </h2>
         </div>
 
@@ -105,15 +105,6 @@ export default function DamagedProductsPage() {
           </div>
           <p className="text-xl font-bold font-mono text-stone-700">{Math.round(totalFinancialLoss).toLocaleString('fr-FR')} FC</p>
           <span className="text-sm text-stone-500 mt-0.5 block">Basé sur le prix d'achat unitaire usine</span>
-        </div>
-
-        <div className="p-4 rounded-lg bg-white border border-stone-200 shadow-sm">
-          <div className="flex items-center justify-between text-stone-500 text-sm mb-1">
-            <span>Règle d'Immutabilité du Stock</span>
-            <ShieldAlert className="w-4 h-4 text-stone-600" />
-          </div>
-          <p className="text-sm font-semibold text-stone-900 mt-1">Zéro suppression autorisée</p>
-          <span className="text-sm text-stone-500 mt-0.5 block">Historique conservé pour audit commissaire</span>
         </div>
       </div>
 
@@ -176,7 +167,7 @@ export default function DamagedProductsPage() {
                 <th className="p-3.5">SKU & Produit</th>
                 <th className="p-3.5">Statut Spécifique</th>
                 <th className="p-3.5 text-center">Quantité</th>
-                <th className="p-3.5">Motif Obligatoire (Cahier des charges)</th>
+                <th className="p-3.5">Motif</th>
                 <th className="p-3.5">Opérateur</th>
               </tr>
             </thead>

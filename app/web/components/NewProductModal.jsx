@@ -181,7 +181,7 @@ export default function NewProductModal({ isOpen, onClose, onProductCreated }) {
           {/* Category Toggle */}
           <div>
             <label className="block text-sm font-semibold text-stone-700 mb-1.5 uppercase tracking-wider">
-              Type d'article géré (Cahier des charges Art. 6)
+              Type d'article géré
             </label>
             <div className="grid grid-cols-2 gap-3">
               <button

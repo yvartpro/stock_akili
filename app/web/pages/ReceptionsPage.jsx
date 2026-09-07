@@ -149,7 +149,7 @@ export default function ReceptionsPage() {
         <div>
           <h2 className="text-lg font-bold text-stone-900 tracking-tight flex items-center gap-2">
             <ArrowDownToLine className="w-5 h-5 text-stone-600" />
-            Réceptions de Marchandises (Entrées en Stock)
+            Réceptions de Marchandises
           </h2>
         </div>
 
@@ -275,7 +275,7 @@ export default function ReceptionsPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div>
                   <label className="block text-sm font-semibold text-stone-700 mb-1">
-                    Fournisseur obligatoire (Art. 7) *
+                    Fournisseur *
                   </label>
                   <select
                     value={selectedSupplierId}

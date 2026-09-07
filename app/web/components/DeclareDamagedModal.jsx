@@ -113,7 +113,7 @@ export default function DeclareDamagedModal({ isOpen, onClose, product, onSucces
         </div>
 
         <div className="p-3.5 bg-stone-100 border-b border-stone-100 text-sm text-stone-800 shrink-0">
-          <p className="font-semibold mb-0.5">Règle de gestion (Cahier des charges Art. 11) :</p>
+          <p className="font-semibold mb-0.5">Règle de gestion:</p>
           <p className="text-stone-700">
             Les articles déclarés cassés, fêlés ou égarés ne sont <strong>jamais supprimés</strong>. Ils sont décomptés du stock disponible et conservés au registre d'audit.
           </p>
